@@ -1,5 +1,6 @@
 ﻿<div class="container">
     <h2>Participants</h2>
+    <div ng-show="failedValidation" class="alert alert-danger" role="alert"><b>Oops!</b> Please enter the names of a few people.</div>
     <form id="guest-form" ng-submit="addGuest()">
         <input class="form-control input-lg" id="new-guest" placeholder="Who will be making the decision?" ng-model="newGuest" autofocus>
     </form>
@@ -20,7 +21,7 @@
     <div id="footer">
         <div class="btn-group btn-group-lg">
             <a ng-click="goBackTo('/restaurants')" class="btn btn-default btn-lg">Back</a>
-            <a ui-sref="vote.turn" class="btn btn-primary btn-lg">Next</a>
+            <a ng-click="submit()" class="btn btn-primary btn-lg">Next</a>
         </div>
     </div>
 </div>

@@ -4,9 +4,12 @@
         $scope.guests = guestService.getAll();
     }
 
+    $scope.failedValidation = false;
     $scope.newGuest = '';
 
     $scope.addGuest = function () {
+        $scope.failedValidation = false;
+
         var newGuest = $scope.newGuest.trim();
         if (!newGuest.length) {
             return;
@@ -30,7 +33,6 @@
     };
 
     $scope.goBackTo = function (path) {
-
         $rootScope.animationClass = 'slide-right';
 
         $timeout(function () {
@@ -39,6 +41,14 @@
         
         $location.path(path)
     }
+
+    $scope.submit = function () {
+        if ($scope.guests.length == 0) {
+            $scope.failedValidation = true;
+        } else {
+            $location.path('/vote/turn');
+        }
+    };
 
     refresh();
 });

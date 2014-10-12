@@ -1,5 +1,6 @@
 ﻿<div class="container">
     <h2>Restaurants</h2>
+    <div ng-show="failedValidation" class="alert alert-danger" role="alert"><b>Oops!</b> Please enter the names of a few restaurants.</div>
     <form id="restaurant-form" ng-submit="addRestaurant()">
         <input class="form-control input-lg" id="new-restaurant" placeholder="What places are you considering?" ng-model="newRestaurant" autofocus>
     </form>
@@ -18,6 +19,6 @@
         </ul>
     </div>
     <div id="footer">
-        <a ui-sref="guests" class="btn btn-block btn-primary btn-lg">Next</a>
+        <a ng-click="submit()" class="btn btn-block btn-primary btn-lg">Next</a>
     </div>
 </div>
