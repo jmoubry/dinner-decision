@@ -2,7 +2,7 @@
     <h2>Restaurants</h2>
     <div ng-show="failedValidation" class="alert alert-danger" role="alert"><b>Oops!</b> Please enter the names of a few restaurants.</div>
     <form id="restaurant-form" ng-submit="addRestaurant()">
-        <input class="form-control input-lg" id="new-restaurant" placeholder="What places are you considering?" ng-model="newRestaurant" autofocus>
+        <input class="form-control input-lg" id="new-restaurant" placeholder="What places are you considering?" ng-model="newRestaurant" autocapitalize="words" autofocus>
     </form>
     <div id="element-before-footer" ng-show="restaurants.length">
         <ul class="sorted-list list-group" id="restaurant-list">

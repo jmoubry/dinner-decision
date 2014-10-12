@@ -2,7 +2,7 @@
     <h2>Participants</h2>
     <div ng-show="failedValidation" class="alert alert-danger" role="alert"><b>Oops!</b> Please enter the names of a few people.</div>
     <form id="guest-form" ng-submit="addGuest()">
-        <input class="form-control input-lg" id="new-guest" placeholder="Who will be making the decision?" ng-model="newGuest" autofocus>
+        <input class="form-control input-lg" id="new-guest" placeholder="Who will be making the decision?" ng-model="newGuest" autocapitalize="words" autofocus>
     </form>
     <div id="element-before-footer" ng-show="guests.length">
         <ul class="list-unstyled">
