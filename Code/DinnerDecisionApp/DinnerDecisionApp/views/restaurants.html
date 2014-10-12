@@ -1,0 +1,23 @@
+﻿<div class="container">
+    <h2>Restaurants</h2>
+    <form id="restaurant-form" ng-submit="addRestaurant()">
+        <input class="form-control input-lg" id="new-restaurant" placeholder="What places are you considering?" ng-model="newRestaurant" autofocus>
+    </form>
+    <div id="element-before-footer" ng-show="restaurants.length">
+        <ul class="sorted-list list-group" id="restaurant-list">
+            <li class="list-group-item" ng-repeat="restaurant in restaurants | orderBy:'name'">
+                <div class="view">
+                    <div class="view-column">
+                        <label>{{restaurant.name}}</label>
+                    </div>
+                    <div class="view-column">
+                        <button ng-click="removeRestaurant(restaurant)" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="footer">
+        <a ui-sref="guests" class="btn btn-block btn-primary btn-lg">Next</a>
+    </div>
+</div>
