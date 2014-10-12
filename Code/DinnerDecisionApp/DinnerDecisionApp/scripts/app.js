@@ -41,8 +41,12 @@ angular.module('dinnerDecisionApp', ['ngAnimate', 'ui.router'])
             templateUrl: 'views/vote-turn.html'
         })
         .state('vote.restaurant', {
-            url: '/restaurant/:id',
+            url: '/restaurant',
             templateUrl: 'views/vote-restaurant.html'
+        })
+        .state('vote.restaurantodd', {
+            url: '/restaurant-odd',
+            templateUrl: 'views/vote-restaurant-odd.html'
         })
         .state('vote.result', {
             url: '/result',

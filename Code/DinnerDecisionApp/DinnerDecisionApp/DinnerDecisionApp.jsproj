@@ -117,6 +117,7 @@
     <Content Include="views\guests.html" />
     <Content Include="views\restaurants.html" />
     <Content Include="views\settings.html" />
+    <Content Include="views\vote-restaurant-odd.html" />
     <Content Include="views\vote-restaurant.html" />
     <Content Include="views\vote-result.html" />
     <Content Include="views\vote-turn.html" />

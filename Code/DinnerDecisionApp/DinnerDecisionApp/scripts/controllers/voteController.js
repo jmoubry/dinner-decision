@@ -1,6 +1,5 @@
 ﻿angular.module('dinnerDecisionApp')
 .controller('voteController', function ($scope, $location, restaurantService, guestService) {
-
     compareObjectNames = function (a, b) {
         if (a.name < b.name) {
             return -1;
@@ -11,16 +10,17 @@
         return 0;
     };
 
+    var guests = guestService.getAll().sort(function (a, b) { return compareObjectNames(a, b) });
+
     var restaurantScoresHash = {};
     var restaurants = restaurantService.getAll().sort(function (a, b) { return compareObjectNames(a, b) });
 
-    var guests = guestService.getAll().sort(function (a, b) { return compareObjectNames(a, b) });
-
-    var restaurantIndex = 0;
     var guestIndex = 0;
-
-    $scope.currentRestaurant = restaurants[restaurantIndex];
+    var restaurantIndex = 0;
+    
     $scope.currentGuest = guests[guestIndex];
+    $scope.currentRestaurant = restaurants[restaurantIndex];
+    $scope.currentOddRestaurant = '';
 
     $scope.winningRestaurant = {};
     $scope.tiedWinningRestaurants = [];
@@ -76,6 +76,10 @@
         $scope.winningRestaurant = $scope.tiedWinningRestaurants[Math.floor(Math.random() * $scope.tiedWinningRestaurants.length)];
     };
 
+    isEven = function (number) {
+        return number % 2 == 0;
+    };
+
     $scope.vote = function (score) {
 
         if (restaurantScoresHash[restaurantIndex])
@@ -85,8 +89,14 @@
 
         if (restaurantIndex + 1 < restaurants.length) {
             restaurantIndex = restaurantIndex + 1;
-            $scope.currentRestaurant = restaurants[restaurantIndex];
-            $location.path('/vote/restaurant/' + restaurantIndex);
+
+            if (isEven(restaurantIndex)) {
+                $scope.currentRestaurant = restaurants[restaurantIndex];
+                $location.path('/vote/restaurant');
+            } else {
+                $scope.currentOddRestaurant = restaurants[restaurantIndex];
+                $location.path('/vote/restaurant-odd');
+            }
         } else if (guestIndex + 1 < guests.length) {
             $location.path('/vote/turn');
 
