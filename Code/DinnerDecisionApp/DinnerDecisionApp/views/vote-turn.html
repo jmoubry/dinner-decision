@@ -1,6 +1,10 @@
 ﻿<div class="container">
-    <div class="jumbotron" style="margin-top:20px;text-align:center">
-        <h1>It's {{currentGuest.name.trim()}}'s Turn!</h1>
+    <div class="jumbotron" style="text-align:center">
+        <h2>It's Guest #{{currentGuestNumber}}'s Turn!</h2>
         <p><a ui-sref="vote.restaurant" class="btn btn-lg btn-success" role="button">Start Deciding!</a></p>
+    </div>
+    <div ng-hide="currentGuestNumber == 1" class="jumbotron bg-info" style="margin-top:20px;text-align:center">
+        <h2>No more guests?</h2>
+        <p><a ng-click="determineWinner()" class="btn btn-lg btn-primary" role="button">View the Winner!</a></p>
     </div>
 </div>

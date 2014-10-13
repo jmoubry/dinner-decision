@@ -36,7 +36,7 @@
         if ($scope.restaurants.length <= 1) {
             $scope.failedValidation = true;
         } else {
-            $location.path('/guests');
+            $location.path('/vote/turn');
         }
     };
 

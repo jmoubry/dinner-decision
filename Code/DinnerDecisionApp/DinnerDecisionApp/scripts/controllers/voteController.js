@@ -1,5 +1,5 @@
 ﻿angular.module('dinnerDecisionApp')
-.controller('voteController', function ($scope, $location, restaurantService, guestService) {
+.controller('voteController', function ($scope, $location, restaurantService) {
     compareObjectNames = function (a, b) {
         if (a.name < b.name) {
             return -1;
@@ -10,22 +10,19 @@
         return 0;
     };
 
-    var guests = guestService.getAll().sort(function (a, b) { return compareObjectNames(a, b) });
+    $scope.currentGuestNumber = 1;
 
     var restaurantScoresHash = {};
     var restaurants = restaurantService.getAll().sort(function (a, b) { return compareObjectNames(a, b) });
 
-    var guestIndex = 0;
     var restaurantIndex = 0;
-    
-    $scope.currentGuest = guests[guestIndex];
     $scope.currentRestaurant = restaurants[restaurantIndex];
     $scope.currentOddRestaurant = '';
 
     $scope.winningRestaurant = {};
     $scope.tiedWinningRestaurants = [];
 
-    determineWinner = function () {
+    $scope.determineWinner = function () {
         var restaurantScores = [];
 
         Object.keys(restaurantScoresHash).forEach(function (key) {
@@ -74,6 +71,8 @@
         }
 
         $scope.winningRestaurant = $scope.tiedWinningRestaurants[Math.floor(Math.random() * $scope.tiedWinningRestaurants.length)];
+
+        $location.path('/vote/result');
     };
 
     isEven = function (number) {
@@ -82,10 +81,11 @@
 
     $scope.vote = function (score) {
 
-        if (restaurantScoresHash[restaurantIndex])
+        if (restaurantScoresHash[restaurantIndex]) {
             restaurantScoresHash[restaurantIndex] = restaurantScoresHash[restaurantIndex] + score;
-        else
+        } else {
             restaurantScoresHash[restaurantIndex] = score;
+        }
 
         if (restaurantIndex + 1 < restaurants.length) {
             restaurantIndex = restaurantIndex + 1;
@@ -97,16 +97,11 @@
                 $scope.currentOddRestaurant = restaurants[restaurantIndex];
                 $location.path('/vote/restaurant-odd');
             }
-        } else if (guestIndex + 1 < guests.length) {
-            $location.path('/vote/turn');
-
-            restaurantIndex = 0;
-            guestIndex = guestIndex + 1;
-            $scope.currentRestaurant =  restaurants[restaurantIndex];
-            $scope.currentGuest =  guests[guestIndex];
         } else {
-            determineWinner();
-            $location.path('/vote/result');
+            restaurantIndex = 0;
+            $scope.currentRestaurant =  restaurants[restaurantIndex];
+            $scope.currentGuestNumber = $scope.currentGuestNumber + 1;
+            $location.path('/vote/turn');
         }
-    };
+    };    
 });
