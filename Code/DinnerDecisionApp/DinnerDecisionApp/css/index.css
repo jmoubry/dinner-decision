@@ -6,6 +6,11 @@
     background-color: #d9edf7;
 }
 
+label.label-lg {
+    display: block;
+    font-size: 20px;
+}
+
 #element-before-footer {
     padding-bottom: 75px;
 }
@@ -49,7 +54,7 @@
 .slide-left,.slide-right {
     position: absolute;
     left: 0;
-    top: 45px;
+    top: 25px;
     width: 100%;
     height: 100%;
 }

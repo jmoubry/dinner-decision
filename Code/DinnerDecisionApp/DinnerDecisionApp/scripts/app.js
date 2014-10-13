@@ -1,7 +1,7 @@
 ﻿// app.js
 // create our angular app and inject ngAnimate and ui-router 
 // =============================================================================
-angular.module('dinnerDecisionApp', ['ngAnimate', 'ui.router'])
+angular.module('dinnerDecisionApp', ['ngResource', 'ngAnimate', 'ui.router'])
 
 // configuring our routes 
 // =============================================================================
@@ -21,10 +21,13 @@ angular.module('dinnerDecisionApp', ['ngAnimate', 'ui.router'])
 		    controller: 'restaurantController'
 		})
 
-		.state('guests', {
-		    url: '/guests',
-		    templateUrl: 'views/guests.html',
-		    controller: 'guestController'
+		.state('restaurants.selectors', {
+		    url: '/selectors',
+		    templateUrl: 'views/restaurants-selectors.html',
+		})
+		.state('restaurants.list', {
+		    url: '/list',
+		    templateUrl: 'views/restaurants-list.html',
 		})
 
         .state('vote', {
@@ -55,7 +58,7 @@ angular.module('dinnerDecisionApp', ['ngAnimate', 'ui.router'])
 
     // catch all route
     // send users to the restaurants page 
-    $urlRouterProvider.otherwise('/restaurants');
+    $urlRouterProvider.otherwise('/restaurants/selectors');
 })
 .factory("cordova", ['$q', "$window", "$timeout", function ($q, $window, $timeout) {
      var deferred = $q.defer();
