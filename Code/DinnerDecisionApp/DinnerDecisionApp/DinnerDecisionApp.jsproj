@@ -105,6 +105,7 @@
     <Content Include="scripts\angular\angular-animate.min.js" />
     <Content Include="scripts\angular\angular-animate.min.js.map" />
     <Content Include="scripts\angular\angular-resource.min.js" />
+    <Content Include="scripts\angular\angular-resource.min.js.map" />
     <Content Include="scripts\angular\angular-ui-router.min.js" />
     <Content Include="scripts\angular\angular.min.js" />
     <Content Include="scripts\angular\angular.min.js.map" />
@@ -119,6 +120,7 @@
     <Content Include="scripts\services\guidGeneratorService.js" />
     <Content Include="scripts\services\geolocationService.js" />
     <Content Include="scripts\services\restaurantService.js" />
+    <Content Include="secrets.json" />
     <Content Include="views\restaurants-selectors.html" />
     <Content Include="views\restaurants-list.html" />
     <Content Include="views\restaurants.html" />

@@ -1,8 +1,6 @@
 ﻿angular.module('dinnerDecisionApp')
-.factory("foursquareBaseUrlService", function () {
+.factory("foursquareBaseUrlService", ["$q", "$http", function ($q, $http) {
     var apiBaseUrl = 'https://api.foursquare.com/v2/venues/';
-    var clientId = '';
-    var clientSecret = '';
 
     getFormattedDate = function () {
         var today = new Date();
@@ -23,7 +21,18 @@
 
     return {
         getBaseUrl: function (service) {
-            return apiBaseUrl + service + '?client_id=' + clientId + '&client_secret=' + clientSecret + '&v=' + getFormattedDate();
+            var defer = $q.defer();
+
+            $http.get('/secrets.json')
+                .success(function (data) {
+                    var url = apiBaseUrl + service + '?client_id=' + data.foursquareClientId + '&client_secret=' + data.foursquareClientSecret + '&v=' + getFormattedDate();
+                    defer.resolve(url);
+                })
+                .error(function () {
+                    defer.reject('could not find secrets');
+                });
+
+            return defer.promise;
         }
     };
-})
+}]);
