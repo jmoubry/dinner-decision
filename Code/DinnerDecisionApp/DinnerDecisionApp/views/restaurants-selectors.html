@@ -3,8 +3,18 @@
     <p>What types of restaurants are you thinking about? If you just want to enter your own restaurants, you can skip this step.</p>
 
     <div class="form-group">
-        <label class="label-lg">Categories</label>
-        <select class="form-control" ng-model="selectedCategories" ng-options="c.shortName for c in categories" multiple></select>
+        <label class="label-lg">Location</label>
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control" ng-model="searchModel.location">
+            <span class="input-group-btn">
+                <button class="btn btn-default" ng-click="resetLocation()" type="button"><span class="glyphicon glyphicon-map-marker"></span></button>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="label-lg">Category</label>
+        <select class="form-control input-lg" ng-model="searchModel.category" ng-options="c.shortName for c in categories"></select>
     </div>
 
     <div class="form-group">
@@ -17,14 +27,10 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="label-lg">Location</label>
-        <input class="form-control" type="text" ng-model="currentLocation" />
-    </div>
     <div id="footer">
         <div class="btn-group btn-group-lg">
             <a ui-sref="restaurants.list" class="btn btn-default btn-lg">Skip</a>
-            <a ng-click="submit()" class="btn btn-primary btn-lg">Next</a>
+            <a ng-click="submitSelectors()" class="btn btn-primary btn-lg">Next</a>
         </div>
     </div>
 </div>

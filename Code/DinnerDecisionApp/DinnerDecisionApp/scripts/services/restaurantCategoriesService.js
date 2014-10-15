@@ -1,29 +1,19 @@
 ﻿angular.module('dinnerDecisionApp')
-.factory("restaurantCategoriesService", ["$q", "$http", "foursquareBaseUrlService", function ($q, $http, foursquareBaseUrlService) {
+.factory("restaurantCategoriesService", ["$q", "$http", function ($q, $http) {
     
     return {
         getCategories: function () {
-            return foursquareBaseUrlService.getBaseUrl('categories').then(
-                function (url) {
-                    return $http.get(url).then(
-                        function (response) {
-                            var foodMatches = $.grep(response.data.response.categories, function (c) { return c.name == 'Food'; });
+            var defer = $q.defer();
 
-                            if (foodMatches && foodMatches.length == 0) {
-                                return null;
-                            }
+            $http.get('/scripts/data/categories.json')
+                .success(function (data) {
+                    defer.resolve(data);
+                })
+                .error(function () {
+                    defer.reject('Error');
+                });
 
-                            return foodMatches[0].categories;
-                        },
-                        function (error) {
-                            return null;
-                        }
-                    );
-                },
-                function (error) {
-                    return null;
-                }
-            );
+            return defer.promise;
         }
     }
 }]);

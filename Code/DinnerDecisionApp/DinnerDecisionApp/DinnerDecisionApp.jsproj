@@ -98,10 +98,6 @@
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="css\chosen-sprite.png" />
-    <Content Include="css\chosen-sprite@2x.png" />
-    <Content Include="css\chosen.css" />
-    <Content Include="css\chosen.min.css" />
     <Content Include="scripts\angular\angular-animate.min.js" />
     <Content Include="scripts\angular\angular-animate.min.js.map" />
     <Content Include="scripts\angular\angular-resource.min.js" />
@@ -110,15 +106,16 @@
     <Content Include="scripts\angular\angular.min.js" />
     <Content Include="scripts\angular\angular.min.js.map" />
     <Content Include="scripts\app.js" />
-    <Content Include="scripts\chosen.jquery.min.js" />
     <Content Include="scripts\controllers\settingController.js" />
     <Content Include="scripts\controllers\voteController.js" />
+    <Content Include="scripts\data\categories.json" />
     <Content Include="scripts\jquery-2.1.1.min.js" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\services\foursquareBaseUrlService.js" />
     <Content Include="scripts\services\restaurantCategoriesService.js" />
     <Content Include="scripts\services\guidGeneratorService.js" />
     <Content Include="scripts\services\geolocationService.js" />
+    <Content Include="scripts\services\restaurantSearchService.js" />
     <Content Include="scripts\services\restaurantService.js" />
     <Content Include="secrets.json" />
     <Content Include="views\restaurants-selectors.html" />

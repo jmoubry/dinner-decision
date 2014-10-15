@@ -30,10 +30,18 @@
                                 if (location == 'Current map view') {
                                     location = 'Current Location'; // Not near a known city.
                                 }
-                                return location;
+                                return {
+                                    location: location,
+                                    latitude: position.coords.latitude,
+                                    longitude: position.coords.longitude
+                                };
                             },
                             function (error) {
-                                return position.coords.latitude + ',' + position.coords.longitude
+                                return {
+                                    location: 'Current Location',
+                                    latitude: position.coords.latitude,
+                                    longitude: position.coords.longitude
+                                };
                             }
                         );
                 },
