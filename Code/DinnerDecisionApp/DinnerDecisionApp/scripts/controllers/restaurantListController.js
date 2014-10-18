@@ -14,15 +14,12 @@
         }
 
         restaurantService.create(newRestaurant);
-        $scope.restaurants.push({ name: newRestaurant });
 
         $scope.newRestaurant = '';
     };
 
     $scope.removeRestaurant = function (restaurant) {
         restaurantService.del(restaurant);
-        var index = $scope.restaurants.indexOf(restaurant);
-        $scope.restaurants.splice(index, 1);
     };
 
     $scope.submit = function () {
