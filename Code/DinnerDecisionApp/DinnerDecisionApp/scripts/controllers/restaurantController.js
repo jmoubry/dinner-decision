@@ -12,7 +12,7 @@
         useLatLong: false,
         latitude: 0,
         longitude: 0,
-        prices: []
+        prices: [false, false, false, false]
     };
     
     var geolocation = "Getting location...";
@@ -57,6 +57,10 @@
     $scope.removeRestaurant = function (restaurant) {
         var index = $scope.restaurants.indexOf(restaurant);
         $scope.restaurants.splice(index, 1);
+    };
+
+    $scope.togglePrice = function(index){
+        $scope.searchModel.prices[index] = !$scope.searchModel.prices[index];
     };
 
     $scope.submitSelectors = function () {

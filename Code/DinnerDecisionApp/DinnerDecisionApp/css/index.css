@@ -2,6 +2,20 @@
   padding-top: 45px;
 }
 
+.btn-toggle:hover,
+.btn-toggle:focus {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-toggle:active,
+.btn-toggle.active {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+  background-image: none;
+}
+
 .jumbotron.bg-info {
     background-color: #d9edf7;
 }

@@ -2,15 +2,25 @@
 .factory("restaurantSearchService", ["$q", "$http", "foursquareBaseUrlService", function ($q, $http, foursquareBaseUrlService) {
 
     buildUrl = function (baseUrl, searchModel) {
-        var url = baseUrl + '&limit=10&categoryId=' + encodeURIComponent(searchModel.category.id);
+        var url = baseUrl + '&limit=10&categoryId=' + searchModel.category.id;
 
         if (searchModel.useLatLong) {
-            url += '&ll=' + encodeURIComponent(searchModel.latitude + ',' + searchModel.longitude);
+            url += '&ll=' + searchModel.latitude + ',' + searchModel.longitude;
         } else {
             url += '&near=' + encodeURIComponent(searchModel.location);
         }
 
-        // TODO: PRICE
+        pricesToSearch = [];
+
+        $.each(searchModel.prices, function (index, item) {
+            if (item) {
+                pricesToSearch.push(index + 1);
+            }
+        });
+
+        if (pricesToSearch.length > 0) {
+            url += '&price=' + pricesToSearch.join();
+        }
 
         return url;
     };

@@ -20,10 +20,10 @@
     <div class="form-group">
         <label class="label-lg">Price</label>
         <div class="btn-group">
-            <button type="button" class="btn btn-default btn-lg">$</button>
-            <button type="button" class="btn btn-default btn-lg">$$</button>
-            <button type="button" class="btn btn-default btn-lg">$$$</button>
-            <button type="button" class="btn btn-default btn-lg">$$$$</button>
+            <button type="button" ng-click="togglePrice(0)" ng-class="{ 'active': searchModel.prices[0] }" class="btn btn-default btn-toggle btn-lg">$</button>
+            <button type="button" ng-click="togglePrice(1)" ng-class="{ 'active': searchModel.prices[1] }" class="btn btn-default btn-toggle btn-lg">$$</button>
+            <button type="button" ng-click="togglePrice(2)" ng-class="{ 'active': searchModel.prices[2] }" class="btn btn-default btn-toggle btn-lg">$$$</button>
+            <button type="button" ng-click="togglePrice(3)" ng-class="{ 'active': searchModel.prices[3] }" class="btn btn-default btn-toggle btn-lg">$$$$</button>
         </div>
     </div>
 

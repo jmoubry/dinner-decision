@@ -98,6 +98,7 @@
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.css" />
     <Content Include="scripts\angular\angular-animate.min.js" />
     <Content Include="scripts\angular\angular-animate.min.js.map" />
     <Content Include="scripts\angular\angular-resource.min.js" />
@@ -146,7 +147,6 @@
     <Folder Include="res\screens\ios\" />
     <Folder Include="res\screens\windows8\" />
     <Folder Include="res\screens\wp8\" />
-    <Folder Include="scripts\models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config.xml">
