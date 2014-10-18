@@ -107,6 +107,7 @@
     <Content Include="scripts\angular\angular.min.js" />
     <Content Include="scripts\angular\angular.min.js.map" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\controllers\restaurantListController.js" />
     <Content Include="scripts\controllers\settingController.js" />
     <Content Include="scripts\controllers\voteController.js" />
     <Content Include="scripts\data\categories.js" />
@@ -116,11 +117,11 @@
     <Content Include="scripts\services\guidGeneratorService.js" />
     <Content Include="scripts\services\geolocationService.js" />
     <Content Include="scripts\services\restaurantSearchService.js" />
+    <Content Include="scripts\services\restaurantGroupService.js" />
     <Content Include="scripts\services\restaurantService.js" />
     <Content Include="secrets.js" />
-    <Content Include="views\restaurants-selectors.html" />
+    <Content Include="views\restaurants-search.html" />
     <Content Include="views\restaurants-list.html" />
-    <Content Include="views\restaurants.html" />
     <Content Include="views\settings.html" />
     <Content Include="views\vote-restaurant-odd.html" />
     <Content Include="views\vote-restaurant.html" />
@@ -154,7 +155,7 @@
     </Content>
     <Content Include="index.html" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="scripts\controllers\restaurantController.js" />
+    <Content Include="scripts\controllers\restaurantSearchController.js" />
     <Content Include="scripts\platformOverrides.js" />
     <Content Include="css\index.css" />
     <Content Include="res\cert\android\ant.properties" />

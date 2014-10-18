@@ -1,8 +1,6 @@
 ﻿angular.module('dinnerDecisionApp')
-.controller('restaurantController', function ($scope, $location, restaurantService, restaurantSearchService, restaurantCategoriesService, geolocationService) {
+.controller('restaurantSearchController', function ($scope, $location, restaurantService, restaurantSearchService, restaurantCategoriesService, geolocationService) {
 
-    $scope.failedValidation = false;
-    $scope.newRestaurant = '';
     $scope.categories = [];
     $scope.restaurants = [];
 
@@ -41,29 +39,11 @@
         $scope.searchModel.location = geolocation;
     };
 
-    $scope.addRestaurant = function () {
-        if ($scope.restaurants.length >= 1) { $scope.failedValidation = false; }
-
-        var newRestaurant = $scope.newRestaurant.trim();
-        if (!newRestaurant.length) {
-            return;
-        }
-
-        $scope.restaurants.push({ name: newRestaurant });
-
-        $scope.newRestaurant = '';
-    };
-
-    $scope.removeRestaurant = function (restaurant) {
-        var index = $scope.restaurants.indexOf(restaurant);
-        $scope.restaurants.splice(index, 1);
-    };
-
     $scope.togglePrice = function(index){
         $scope.searchModel.prices[index] = !$scope.searchModel.prices[index];
     };
 
-    $scope.submitSelectors = function () {
+    $scope.submit = function () {
         $scope.restaurants = [];
 
         // TODO: sanitize user input
@@ -72,20 +52,13 @@
         restaurantSearchService.search($scope.searchModel).then(function (list) {
             console.log('list length: ' + list.length);
             $.each(list, function (index, item) {
+                restaurantService.create(item.venue.name);
                 $scope.restaurants.push({ name: item.venue.name });
             });
             $location.path('/restaurants/list');
         }, function (error) {
             alert('Could not retrieve restaurants.');
         });
-    };
-
-    $scope.submitList = function () {
-        if ($scope.restaurants.length <= 1) {
-            $scope.failedValidation = true;
-        } else {
-            $location.path('/vote/turn');
-        }
     };
 
     updateAddress();

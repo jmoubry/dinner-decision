@@ -17,19 +17,15 @@ angular.module('dinnerDecisionApp', ['ngResource', 'ngAnimate', 'ui.router'])
         	controller: 'settingController'
         })
 
-		.state('restaurants', {
-		    url: '/restaurants',
-		    templateUrl: 'views/restaurants.html',
-		    controller: 'restaurantController'
+		.state('restaurants-search', {
+		    url: '/restaurants/search',
+		    templateUrl: 'views/restaurants-search.html',
+		    controller: 'restaurantSearchController'
 		})
-
-		.state('restaurants.selectors', {
-		    url: '/selectors',
-		    templateUrl: 'views/restaurants-selectors.html',
-		})
-		.state('restaurants.list', {
-		    url: '/list',
+		.state('restaurants-list', {
+		    url: '/restaurants/list',
 		    templateUrl: 'views/restaurants-list.html',
+		    controller: 'restaurantListController'
 		})
 
         .state('vote', {
@@ -60,7 +56,7 @@ angular.module('dinnerDecisionApp', ['ngResource', 'ngAnimate', 'ui.router'])
 
     // catch all route
     // send users to the restaurants page 
-    $urlRouterProvider.otherwise('/restaurants/selectors');
+    $urlRouterProvider.otherwise('/restaurants/search');
 })
 .factory("cordova", ['$q', "$window", "$timeout", function ($q, $window, $timeout) {
      var deferred = $q.defer();

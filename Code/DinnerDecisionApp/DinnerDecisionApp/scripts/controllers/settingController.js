@@ -1,7 +1,7 @@
 ﻿angular.module('dinnerDecisionApp')
-.controller('settingController', function ($scope, restaurantService) {
+.controller('settingController', function ($scope, restaurantGroupService) {
 
     $scope.clearSavedData = function () {
-        restaurantService.delAll();
+        restaurantGroupService.delAll();
     };
 });
