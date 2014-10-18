@@ -27,6 +27,44 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="noMatchesModal" tabindex="-1" role="dialog" aria-labelledby="noMatchesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="noMatchesModalLabel">No Restaurants Found</h4>
+                </div>
+                <div class="modal-body">
+                    We couldn't find any restaurants matching the criteria you entered. Would you like to enter you own list of restaurants?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                    <a ui-sref="restaurants-list" class="btn btn-primary" data-dismiss="modal">Yes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="noInternetModal" tabindex="-1" role="dialog" aria-labelledby="noInternetModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="noInternetModalLabel">No Restaurants Found</h4>
+                </div>
+                <div class="modal-body">
+                    <p>We were unable search restaurants. You may not have an internet connection. </p><p>You can still use the app if you add restaurants manually.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a ui-sref="restaurants-list" class="btn btn-primary" data-dismiss="modal">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="footer">
         <div class="btn-group btn-group-lg">
             <a ui-sref="restaurants-list" class="btn btn-default btn-lg">Skip</a>

@@ -49,14 +49,20 @@
         $scope.searchModel.useLatLong = $scope.searchModel.location === geolocation || $scope.searchModel.location === 'Current Location';
 
         restaurantSearchService.search($scope.searchModel).then(function (list) {
-            $.each(list, function (index, item) {
-                restaurantService.create(item.venue.name);
-                $scope.restaurants.push({ name: item.venue.name });
-            });
-            $location.path('/restaurants/list');
+            if (list == null) {
+                $('#noInternetModal').modal('show');
+            } else if (list.length === 0) {
+                $('#noMatchesModal').modal('show');
+            } else {
+                $.each(list, function (index, item) {
+                    restaurantService.create(item.venue.name);
+                    $scope.restaurants.push({ name: item.venue.name });
+                });
+            
+                $location.path('/restaurants/list');
+            }
         }, function (error) {
-            alert('Cannot search restaurants at this time. You can add restaurants manually.');
-            $location.path('/restaurants/list');
+            $('#noInternetModal').modal('show');
         });
     };
 

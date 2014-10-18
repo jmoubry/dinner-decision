@@ -36,7 +36,7 @@
                             return response.data.response.groups[0].items;
                         },
                         function (error) {
-                            return null;
+                            return [];
                         }
                     );
                 },
