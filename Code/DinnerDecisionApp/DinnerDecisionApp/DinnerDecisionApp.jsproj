@@ -110,7 +110,6 @@
     <Content Include="scripts\controllers\voteController.js" />
     <Content Include="scripts\data\categories.js" />
     <Content Include="scripts\jquery-2.1.1.min.js" />
-    <Content Include="scripts\main.js" />
     <Content Include="scripts\services\foursquareBaseUrlService.js" />
     <Content Include="scripts\services\restaurantCategoriesService.js" />
     <Content Include="scripts\services\guidGeneratorService.js" />

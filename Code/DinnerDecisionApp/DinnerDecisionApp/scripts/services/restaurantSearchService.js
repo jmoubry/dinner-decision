@@ -4,7 +4,7 @@
     buildUrl = function (baseUrl, searchModel) {
         var url = baseUrl + '&limit=10&categoryId=' + encodeURIComponent(searchModel.category.id);
 
-        if (searchModel.useLatLong || searchModel.location === 'Current Location') {
+        if (searchModel.useLatLong) {
             url += '&ll=' + encodeURIComponent(searchModel.latitude + ',' + searchModel.longitude);
         } else {
             url += '&near=' + encodeURIComponent(searchModel.location);

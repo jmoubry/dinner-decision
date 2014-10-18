@@ -1,12 +1,10 @@
 ﻿angular.module('dinnerDecisionApp')
 .controller('restaurantController', function ($scope, $location, restaurantService, restaurantSearchService, restaurantCategoriesService, geolocationService) {
-    var refresh = function () {
-        $scope.restaurants = restaurantService.getAll();
-    }
 
     $scope.failedValidation = false;
     $scope.newRestaurant = '';
     $scope.categories = [];
+    $scope.restaurants = [];
 
     $scope.searchModel = {
         category: {},
@@ -51,46 +49,31 @@
             return;
         }
 
-        restaurantService.create(newRestaurant)
-                         .then(function (restaurant) {
-                             $scope.restaurants.push(restaurant);
-                             return restaurant;
-                         });
+        $scope.restaurants.push({ name: newRestaurant });
 
         $scope.newRestaurant = '';
     };
 
     $scope.removeRestaurant = function (restaurant) {
-        restaurantService.del(restaurant)
-                         .then(function (restaurant) {
-                             var index = $scope.restaurants.indexOf(restaurant);
-                             $scope.restaurants.splice(index, 1);
-                         });
+        var index = $scope.restaurants.indexOf(restaurant);
+        $scope.restaurants.splice(index, 1);
     };
 
-    $scope.submitSelectors = function() {
-        console.log('cat: ' + $scope.searchModel.category.name);
-        console.log('loc: ' + $scope.searchModel.location);
+    $scope.submitSelectors = function () {
+        $scope.restaurants = [];
 
         // TODO: sanitize user input
-
-        if ($scope.searchModel.location === geolocation) {
-            $scope.searchModel.useLatLong = true;
-        }
+        $scope.searchModel.useLatLong = $scope.searchModel.location === geolocation || $scope.searchModel.location === 'Current Location';
 
         restaurantSearchService.search($scope.searchModel).then(function (list) {
             console.log('list length: ' + list.length);
             $.each(list, function (index, item) {
-                restaurantService.create(item.venue.name)
-                                 .then(function (restaurant) {
-                                     $scope.restaurants.push(restaurant);
-                                 });
+                $scope.restaurants.push({ name: item.venue.name });
             });
             $location.path('/restaurants/list');
         }, function (error) {
             alert('Could not retrieve restaurants.');
-        });        
-
+        });
     };
 
     $scope.submitList = function () {
@@ -103,5 +86,4 @@
 
     updateAddress();
     loadCategories();
-    refresh();
 });
