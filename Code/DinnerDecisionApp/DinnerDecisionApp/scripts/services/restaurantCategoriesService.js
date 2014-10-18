@@ -5,14 +5,8 @@
         getCategories: function () {
             var defer = $q.defer();
 
-            $http.get('/scripts/data/categories.json')
-                .success(function (data) {
-                    defer.resolve(data);
-                })
-                .error(function () {
-                    defer.reject('Error');
-                });
-
+            defer.resolve(GLOBAL_CATEGORIES);
+            
             return defer.promise;
         }
     }

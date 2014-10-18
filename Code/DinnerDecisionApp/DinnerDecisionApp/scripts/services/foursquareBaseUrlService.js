@@ -23,15 +23,9 @@
         getBaseUrl: function (service) {
             var defer = $q.defer();
 
-            $http.get('/secrets.json')
-                .success(function (data) {
-                    var url = apiBaseUrl + service + '?client_id=' + data.foursquareClientId + '&client_secret=' + data.foursquareClientSecret + '&v=' + getFormattedDate();
-                    defer.resolve(url);
-                })
-                .error(function () {
-                    defer.reject('could not find secrets');
-                });
-
+            var url = apiBaseUrl + service + '?client_id=' + GLOBAL_SECRETS.foursquareClientId + '&client_secret=' + GLOBAL_SECRETS.foursquareClientSecret + '&v=' + getFormattedDate();
+            defer.resolve(url);
+     
             return defer.promise;
         }
     };

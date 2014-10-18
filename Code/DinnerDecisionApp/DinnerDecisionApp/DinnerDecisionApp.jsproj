@@ -108,7 +108,7 @@
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\settingController.js" />
     <Content Include="scripts\controllers\voteController.js" />
-    <Content Include="scripts\data\categories.json" />
+    <Content Include="scripts\data\categories.js" />
     <Content Include="scripts\jquery-2.1.1.min.js" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\services\foursquareBaseUrlService.js" />
@@ -117,7 +117,7 @@
     <Content Include="scripts\services\geolocationService.js" />
     <Content Include="scripts\services\restaurantSearchService.js" />
     <Content Include="scripts\services\restaurantService.js" />
-    <Content Include="secrets.json" />
+    <Content Include="secrets.js" />
     <Content Include="views\restaurants-selectors.html" />
     <Content Include="views\restaurants-list.html" />
     <Content Include="views\restaurants.html" />
