@@ -23,8 +23,25 @@
         getBaseUrl: function (service) {
             var defer = $q.defer();
 
-            var url = apiBaseUrl + service + '?client_id=' + GLOBAL_SECRETS.foursquareClientId + '&client_secret=' + GLOBAL_SECRETS.foursquareClientSecret + '&v=' + getFormattedDate();
-            defer.resolve(url);
+            if (!GLOBAL_SECRETS) {
+                var newLine = '\n';
+                alert("You need to add a secrets.js file to the root that contains:\n"
+                        + 'var GLOBAL_SECRETS =' + newLine
+                        + '{' + newLine
+                        + '    "foursquareClientId": "<YOUR ID>",' + newLine
+                        + '    "foursquareClientSecret": "<YOUR SECRET>"' + newLine
+                        + '};'
+                        );
+
+                defer.reject("Configuration Error.");
+            } else {
+                var url = apiBaseUrl + service
+                            + '?client_id=' + GLOBAL_SECRETS.foursquareClientId
+                            + '&client_secret=' + GLOBAL_SECRETS.foursquareClientSecret
+                            + '&v=' + getFormattedDate();
+
+                defer.resolve(url);
+            }
      
             return defer.promise;
         }

@@ -1,5 +1,7 @@
 ﻿// app.js
 // create our angular app and inject ngAnimate and ui-router 
+var GLOBAL_SECRETS;
+
 // =============================================================================
 angular.module('dinnerDecisionApp', ['ngResource', 'ngAnimate', 'ui.router'])
 
