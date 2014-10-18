@@ -46,18 +46,17 @@
     $scope.submit = function () {
         $scope.restaurants = [];
 
-        // TODO: sanitize user input
         $scope.searchModel.useLatLong = $scope.searchModel.location === geolocation || $scope.searchModel.location === 'Current Location';
 
         restaurantSearchService.search($scope.searchModel).then(function (list) {
-            console.log('list length: ' + list.length);
             $.each(list, function (index, item) {
                 restaurantService.create(item.venue.name);
                 $scope.restaurants.push({ name: item.venue.name });
             });
             $location.path('/restaurants/list');
         }, function (error) {
-            alert('Could not retrieve restaurants.');
+            alert('Cannot search restaurants at this time. You can add restaurants manually.');
+            $location.path('/restaurants/list');
         });
     };
 
