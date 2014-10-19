@@ -7,6 +7,7 @@
     $scope.searchModel = {
         category: {},
         near: "Getting location...",
+        canGetLocation: false,
         useLatLong: false,
         latitude: 0,
         longitude: 0,
@@ -26,17 +27,24 @@
         geolocationService.getCurrentPosition()
             .then(geolocationService.getAddressFromPosition, function (error) { $scope.currentLocation = error; })
             .then(function (address) {
-                geolocation = address.location;
-                $scope.searchModel.location = address.location;
-                $scope.searchModel.latitude = address.latitude;
-                $scope.searchModel.longitude = address.longitude;
+                if (address) {
+                    geolocation = address.location;
+                    $scope.searchModel.location = address.location;
+                    $scope.searchModel.latitude = address.latitude;
+                    $scope.searchModel.longitude = address.longitude;
+                    $scope.searchModel.canGetLocation = true;
+                } else {
+                    geolocation = undefined;
+                    $scope.searchModel.location = '';
+                }
             }, function (errorMessage) {
-                $scope.searchModel.location = errorMessage;
+                geolocation = undefined;
+                $scope.searchModel.location = '';
             });
     };
 
     $scope.resetLocation = function () {
-        $scope.searchModel.location = geolocation;
+        updateAddress();
     };
 
     $scope.togglePrice = function(index){

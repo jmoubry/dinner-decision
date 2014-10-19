@@ -4,9 +4,9 @@
 
     <div class="form-group">
         <label class="label-lg">Location</label>
-        <div class="input-group input-group-lg">
-            <input type="text" class="form-control" ng-model="searchModel.location">
-            <span class="input-group-btn">
+        <div ng-class="{ 'input-group input-group-lg': searchModel.canGetLocation }">
+            <input type="text" class="form-control" ng-model="searchModel.location" ng-class="{ 'input-lg': !searchModel.canGetLocation }">
+            <span ng-show="searchModel.canGetLocation" class="input-group-btn">
                 <button class="btn btn-default" ng-click="resetLocation()" type="button"><span class="glyphicon glyphicon-map-marker"></span></button>
             </span>
         </div>
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- No Results Modal -->
     <div class="modal fade" id="noMatchesModal" tabindex="-1" role="dialog" aria-labelledby="noMatchesModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- No Internet Modal -->
     <div class="modal fade" id="noInternetModal" tabindex="-1" role="dialog" aria-labelledby="noInternetModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
