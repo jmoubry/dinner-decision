@@ -51,8 +51,14 @@
         $scope.searchModel.prices[index] = !$scope.searchModel.prices[index];
     };
 
+    $scope.skip = function () {
+        restaurantService.delAll();
+        $location.path('/restaurants/list');
+    };
+
     $scope.submit = function () {
-        $scope.restaurants = [];
+        restaurantService.delAll();
+        $location.path('/restaurants/list');
 
         $scope.searchModel.useLatLong = $scope.searchModel.location === geolocation || $scope.searchModel.location === 'Current Location';
 
@@ -64,10 +70,7 @@
             } else {
                 $.each(list, function (index, item) {
                     restaurantService.create(item.venue.name);
-                    $scope.restaurants.push({ name: item.venue.name });
-                });
-            
-                $location.path('/restaurants/list');
+                });    
             }
         }, function (error) {
             $('#noInternetModal').modal('show');
