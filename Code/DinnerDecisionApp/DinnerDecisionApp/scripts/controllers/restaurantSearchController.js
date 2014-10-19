@@ -58,7 +58,6 @@
 
     $scope.submit = function () {
         restaurantService.delAll();
-        $location.path('/restaurants/list');
 
         $scope.searchModel.useLatLong = $scope.searchModel.location === geolocation || $scope.searchModel.location === 'Current Location';
 
@@ -70,7 +69,9 @@
             } else {
                 $.each(list, function (index, item) {
                     restaurantService.create(item.venue.name);
-                });    
+                });
+
+                $location.path('/restaurants/list');
             }
         }, function (error) {
             $('#noInternetModal').modal('show');
