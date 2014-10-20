@@ -99,7 +99,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="AdMob.js" />
+    <Content Include="AppRate.js" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="locales.js" />
     <Content Include="plugins\cordova-plugin-admob-master\.project" />
     <Content Include="plugins\cordova-plugin-admob-master\demo\admob-android.jpg" />
     <Content Include="plugins\cordova-plugin-admob-master\demo\admob-ipad-landscape.jpg" />

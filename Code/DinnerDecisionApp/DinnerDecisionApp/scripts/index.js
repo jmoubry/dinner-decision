@@ -17,6 +17,16 @@
         // display a banner at startup
         window.plugins.AdMob.createBannerView();
 
+
+        var cfg = {
+            appStoreAppURL: {
+                ios: "itms-apps://itunes.apple.com/app/id<my_app_id>?mt=8",
+                android: "market://details?id=<package_name>"
+            }
+        };
+
+        navigator.apprate.setup(cfg);
+        navigator.apprate.promptForRating();
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
     };
 
