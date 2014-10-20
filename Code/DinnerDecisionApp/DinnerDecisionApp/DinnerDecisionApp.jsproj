@@ -98,7 +98,21 @@
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="AdMob.js" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="plugins\cordova-plugin-admob-master\.project" />
+    <Content Include="plugins\cordova-plugin-admob-master\demo\admob-android.jpg" />
+    <Content Include="plugins\cordova-plugin-admob-master\demo\admob-ipad-landscape.jpg" />
+    <Content Include="plugins\cordova-plugin-admob-master\demo\admob-iphone.jpg" />
+    <Content Include="plugins\cordova-plugin-admob-master\LICENSE" />
+    <Content Include="plugins\cordova-plugin-admob-master\plugin.xml" />
+    <Content Include="plugins\cordova-plugin-admob-master\README.md" />
+    <Content Include="plugins\cordova-plugin-admob-master\src\android\AdMob.java" />
+    <Content Include="plugins\cordova-plugin-admob-master\src\ios\CDVAdMob.h" />
+    <Content Include="plugins\cordova-plugin-admob-master\src\ios\CDVAdMob.m" />
+    <Content Include="plugins\cordova-plugin-admob-master\src\wp8\AdMob.cs" />
+    <Content Include="plugins\cordova-plugin-admob-master\test\index.html" />
+    <Content Include="plugins\cordova-plugin-admob-master\www\AdMob.js" />
     <Content Include="scripts\angular\angular-animate.min.js" />
     <Content Include="scripts\angular\angular-animate.min.js.map" />
     <Content Include="scripts\angular\angular-resource.min.js" />
@@ -111,6 +125,7 @@
     <Content Include="scripts\controllers\settingController.js" />
     <Content Include="scripts\controllers\voteController.js" />
     <Content Include="scripts\data\categories.js" />
+    <Content Include="scripts\index.js" />
     <Content Include="scripts\jquery-2.1.1.min.js" />
     <Content Include="scripts\services\foursquareBaseUrlService.js" />
     <Content Include="scripts\services\restaurantCategoriesService.js" />
