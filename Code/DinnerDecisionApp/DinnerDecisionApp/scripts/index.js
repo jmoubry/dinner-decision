@@ -21,7 +21,7 @@
         var cfg = {
             appStoreAppURL: {
                 ios: "itms-apps://itunes.apple.com/app/id<my_app_id>?mt=8",
-                android: "market://details?id=<package_name>"
+                android: "market://details?id=moubry.dinnerdecision"
             }
         };
 
