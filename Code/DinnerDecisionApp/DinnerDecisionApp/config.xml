@@ -10,6 +10,7 @@
   <content src="index.html" />
   <access origin="*" />
   <preference name="SplashScreen" value="screen" />
+  <preference name="AndroidLaunchMode" value="singleTop" />
   <vs:features>
     <vs:feature>org.apache.cordova.geolocation@0.3.8</vs:feature>
     <vs:feature>https://github.com/pushandplay/cordova-plugin-apprate.git</vs:feature>
