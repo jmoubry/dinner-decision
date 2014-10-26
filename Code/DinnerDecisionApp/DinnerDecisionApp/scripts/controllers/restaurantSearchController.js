@@ -67,8 +67,13 @@
             } else if (list.length === 0) {
                 $('#noMatchesModal').modal('show');
             } else {
+                var uniqueNames = [];
+
                 $.each(list, function (index, item) {
-                    restaurantService.create(item.venue.name);
+                    if ($.inArray(item.venue.name, uniqueNames) === -1) {
+                        restaurantService.create(item.venue.name);
+                        uniqueNames.push(item.venue.name);
+                    }
                 });
 
                 $location.path('/restaurants/list');

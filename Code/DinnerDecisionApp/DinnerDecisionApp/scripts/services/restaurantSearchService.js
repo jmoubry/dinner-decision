@@ -2,7 +2,7 @@
 .factory("restaurantSearchService", ["$q", "$http", "foursquareBaseUrlService", function ($q, $http, foursquareBaseUrlService) {
 
     buildUrl = function (baseUrl, searchModel) {
-        var url = baseUrl + '&limit=10&categoryId=' + searchModel.category.id;
+        var url = baseUrl + '&limit=20&categoryId=' + searchModel.category.id;
 
         if (searchModel.useLatLong) {
             url += '&ll=' + searchModel.latitude + ',' + searchModel.longitude;

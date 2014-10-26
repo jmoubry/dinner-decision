@@ -18,6 +18,8 @@
     var restaurantIndex = 0;
     $scope.currentRestaurant = restaurants[restaurantIndex];
     $scope.currentOddRestaurant = '';
+    $scope.selectedScore = -1;
+    $scope.selectedOddScore = -1;
 
     $scope.winningRestaurant = {};
     $scope.tiedWinningRestaurants = [];
@@ -80,7 +82,6 @@
     };
 
     $scope.vote = function (score) {
-
         if (restaurantScoresHash[restaurantIndex]) {
             restaurantScoresHash[restaurantIndex] = restaurantScoresHash[restaurantIndex] + score;
         } else {
@@ -91,13 +92,19 @@
             restaurantIndex = restaurantIndex + 1;
 
             if (isEven(restaurantIndex)) {
+                $scope.selectedScore = -1;
+                $scope.selectedOddScore = score;
                 $scope.currentRestaurant = restaurants[restaurantIndex];
                 $location.path('/vote/restaurant');
             } else {
+                $scope.selectedScore = score;
+                $scope.selectedOddScore = -1;
                 $scope.currentOddRestaurant = restaurants[restaurantIndex];
                 $location.path('/vote/restaurant-odd');
             }
         } else {
+            $scope.selectedScore = -1;
+            $scope.selectedOddScore = -1;
             restaurantIndex = 0;
             $scope.currentRestaurant =  restaurants[restaurantIndex];
             $scope.currentGuestNumber = $scope.currentGuestNumber + 1;
