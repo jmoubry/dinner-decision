@@ -8,10 +8,13 @@
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
-        // Handle the Cordova pause and resume events
+        // Handle the Cordova events
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
+        document.addEventListener('showkeyboard', onShowKeyboard.bind(this), false);
+        document.addEventListener('hidekeyboard', onHideKeyboard.bind(this), false);
 
+        
         initAd();
 
         // display a banner at startup
@@ -36,6 +39,14 @@
 
     function onResume() {
         // TODO: This application has been reactivated. Restore application state here.
+    };
+
+    function onShowKeyboard() {
+        $('#footer').removeClass('footer-normal').addClass('footer-keyboard');
+    };
+
+    function onHideKeyboard() {
+        setTimeout(function () { $('#footer').removeClass('footer-keyboard').addClass('footer-normal'); }, 50);        
     };
 
     function initAd() {
@@ -69,7 +80,7 @@
                 bannerAtTop: false, // set to true, to put banner at top
                 overlap: false, // set to true, to allow banner overlap webview
                 offsetTopBar: false, // set to true to avoid ios7 status bar overlap
-                isTesting: false, // receiving test ad
+                isTesting: true, // receiving test ad
                 autoShow: true // auto show interstitial ad when loaded
             });
 

@@ -1,5 +1,5 @@
 ﻿angular.module('dinnerDecisionApp')
-.controller('restaurantListController', function ($scope, $rootScope, $timeout, $location, restaurantService, restaurantSearchService, restaurantCategoriesService, geolocationService) {
+.controller('restaurantListController', function ($scope, $timeout, $location, restaurantService, restaurantSearchService, restaurantCategoriesService, geolocationService) {
 
     $scope.failedValidation = false;
     $scope.newRestaurant = '';
@@ -30,13 +30,7 @@
         }
     };
 
-    $scope.back = function () {
-         $rootScope.animationClass = 'slide-right';
-
-         $timeout(function () {
-            $rootScope.animationClass = '';
-            }, 350);
-        
+    $scope.back = function () {        
         $location.path('/restaurants/search');
     };
 });
