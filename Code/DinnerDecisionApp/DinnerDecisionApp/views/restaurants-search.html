@@ -27,6 +27,25 @@
         </div>
     </div>
 
+    <!-- No Location Modal -->
+    <div class="modal fade" id="noLocationModal" tabindex="-1" role="dialog" aria-labelledby="noLocationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="noLocationModalLabel">Location Required</h4>
+                </div>
+                <div class="modal-body">
+                    We couldn't find your location, so you need to enter a location or skip this screen and add your own list of restaurants.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a ui-sref="restaurants-list" class="btn btn-primary" data-dismiss="modal">Skip</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- No Results Modal -->
     <div class="modal fade" id="noMatchesModal" tabindex="-1" role="dialog" aria-labelledby="noMatchesModalLabel" aria-hidden="true">
         <div class="modal-dialog">

@@ -25,7 +25,7 @@
 
     var updateAddress = function () {
         geolocationService.getCurrentPosition()
-            .then(geolocationService.getAddressFromPosition, function (error) { $scope.currentLocation = error; })
+            .then(geolocationService.getAddressFromPosition, function (error) { setLocationToNotFound(); })
             .then(function (address) {
                 if (address) {
                     geolocation = address.location;
@@ -34,13 +34,16 @@
                     $scope.searchModel.longitude = address.longitude;
                     $scope.searchModel.canGetLocation = true;
                 } else {
-                    geolocation = undefined;
-                    $scope.searchModel.location = '';
+                    setLocationToNotFound();
                 }
             }, function (errorMessage) {
-                geolocation = undefined;
-                $scope.searchModel.location = '';
+                setLocationToNotFound();
             });
+    };
+
+    setLocationToNotFound = function () {
+        geolocation = undefined;
+        $scope.searchModel.location = '';
     };
 
     $scope.resetLocation = function () {
@@ -58,6 +61,11 @@
 
     $scope.submit = function () {
         restaurantService.delAll();
+
+        if (!geolocation && !$scope.searchModel.location) {
+            $('#noLocationModal').modal('show');
+            return;
+        }
 
         $scope.searchModel.useLatLong = $scope.searchModel.location === geolocation || $scope.searchModel.location === 'Current Location';
 
