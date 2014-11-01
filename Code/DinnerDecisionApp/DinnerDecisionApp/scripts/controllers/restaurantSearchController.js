@@ -47,6 +47,7 @@
     };
 
     $scope.resetLocation = function () {
+        $scope.searchModel.location = "Getting location...";
         updateAddress();
     };
 

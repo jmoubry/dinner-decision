@@ -121,3 +121,7 @@ label.label-lg {
 .list-group-item .view-column:last-child {
     padding-right: 0px;
 }
+
+#restaurant-list {
+    margin-top: 15px;
+}

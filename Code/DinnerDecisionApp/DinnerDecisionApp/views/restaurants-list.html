@@ -1,8 +1,13 @@
 ﻿<div class="container">
-    <h2>Restaurants</h2>
-    <div ng-show="failedValidation" class="alert alert-danger" role="alert"><b>Oops!</b> Please enter the names of a few restaurants.</div>
+    <h2 style="margin-bottom: 20px">Add Restaurants</h2>
+    <div ng-show="failedValidation" class="alert alert-danger" role="alert"><b>Oops!</b> We suggest adding 5-10 places.</div>
     <form id="restaurant-form" ng-submit="addRestaurant()">
-        <input class="form-control input-lg" id="new-restaurant" placeholder="What places are you considering?" ng-model="newRestaurant" autocapitalize="words" autofocus>
+        <div class="input-group input-group-lg">
+            <input class="form-control" id="new-restaurant" placeholder="e.g. Panera Bread" ng-model="newRestaurant" autocapitalize="words" autofocus>
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="addRestaurant()">Add</button>
+            </span>
+        </div><!-- /input-group -->
     </form>
     <div id="element-before-footer" ng-show="restaurants.length">
         <ul class="sorted-list list-group" id="restaurant-list">
