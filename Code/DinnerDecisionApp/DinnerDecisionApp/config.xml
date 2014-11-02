@@ -1,20 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="moubry.dinnerdecision" android-versionCode="-1" version="1.0.0.0" xmlns="http://www.w3.org/ns/widgets">
+<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="moubry.dinnerdecision" android-versionCode="3" version="1.2.0.0" xmlns="http://www.w3.org/ns/widgets">
   <name>Dinner Decision</name>
   <description>
-    A blank project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone.
+    Dinner Decision helps you and your friends, family, or coworkers come to an agreement on where you
+    should go to dinner (or lunch or breakfast).  Start by searching for nearby restaurants or entering
+    your own list of restaurants.  Then, each person will be asked in turn to vote on the restaurants.
+    Finally, Dinner Decision will select the restaurant that is most wanted by everyone who participated.
   </description>
-  <author href="http://cordova.io" email="dev@cordova.apache.org">
-    Apache Cordova Team
+  <author href="http://moubry.com" email="info@moubry.com">
+    Moubry Mobile, Inc.
   </author>
   <content src="index.html" />
-  <access origin="*" />
+  <access origin="https://api.foursquare.com" />
   <preference name="SplashScreen" value="screen" />
   <preference name="AndroidLaunchMode" value="singleTop" />
   <preference name="DisallowOverscroll" value="true" />
   <vs:features>
     <vs:feature>org.apache.cordova.geolocation@0.3.8</vs:feature>
-    <vs:feature>https://github.com/pushandplay/cordova-plugin-apprate.git</vs:feature>
     <vs:feature>org.apache.cordova.device@0.2.10</vs:feature>
   </vs:features>
   <vs:platformSpecificValues />
