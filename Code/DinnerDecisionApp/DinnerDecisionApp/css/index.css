@@ -1,49 +1,66 @@
 ﻿body {
-  padding-top: 45px;
+    padding-top: 45px;
+}
+
+.navbar-header {
+    background-image: url('../images/navbar.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+
+/* height of nexus one viewport: 458px */
+/* height of nexus 4 viewport: 517px */
+@media (max-height: 516px) {
+    .hidden-xxs {
+        display: none !important;
+    }
 }
 
 .vote-view {
     margin-top: 20px;
 }
 
-/* height of nexus one viewport: 458px */
-/* height of nexus 4 viewport: 517px */
-@media (max-height: 516px) {
-  .hidden-xxs {
-    display: none !important;
-  }
+.restaurant-wrapper {
+    min-height: 92px;
+    padding-bottom: 20px;
+    padding-top:20px;
+    display: table;
+    width: 100%;
 }
+
+    .restaurant-wrapper h3 {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
 
 .jumbotron {
     padding: 15px;
     margin-bottom: 15px;
+    text-align: center;
 }
 
-.jumbotron .btn {
-    margin-top: 20px;
-}
+    .jumbotron .btn {
+        margin-top: 20px;
+    }
 
 .vote-buttons .btn-default:hover {
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
+    color: #ffffff;
+    background-color: #999999;
+    border-color: #999999;
     outline: none;
 }
 
 .vote-buttons .btn-default.active-vote {
-  color: #fff;
-  background-color: #3071a9;
-  border-color: #285e8e;
-  background-image: none;
-}
-
-.vote-buttons h3 {
-    text-align: center;
-    margin-bottom: 50px;
+    color: #ffffff;
+    background-color: #e53c37;
+    border-color: #e4332e;
+    background-image: none;
 }
 
 .vote-buttons .btn {
-    height: 65px;   
+    height: 65px;
     width: 250px;
     max-width: 100%;
     margin-top: 20px;
@@ -51,19 +68,21 @@
     margin-right: auto;
 }
 
-.btn-toggle:hover,
-.btn-toggle:focus {
-  color: #333;
-  background-color: #fff;
-  border-color: #ccc;
+.btn-toggle {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
 }
-.btn-toggle:active,
-.btn-toggle.active {
-  color: #fff;
-  background-color: #428bca;
-  border-color: #357ebd;
-  background-image: none;
-}
+
+    .btn-toggle:hover,
+    .btn-toggle:focus,
+    .btn-toggle:active,
+    .btn-toggle.active {
+        color: #ffffff;
+        background-color: #e53c37;
+        border-color: #e4332e;
+        background-image: none;
+    }
 
 .jumbotron.bg-info {
     background-color: #d9edf7;
@@ -75,28 +94,28 @@ label.label-lg {
 }
 
 #element-before-footer {
-    padding-bottom: 75px;
+    padding-bottom: 85px;
 }
 
 #footer {
-    height: 75px;
-    width:100%;
-    margin:0;
+    height: 85px;
+    width: 100%;
+    margin: 0;
     background-color: white;
 }
 
-#footer.footer-keyboard {
-    position: relative;
-    padding: 0;
-    padding-top: 15px;
-}
+    #footer.footer-keyboard {
+        position: relative;
+        padding: 0;
+        padding-top: 15px;
+    }
 
-#footer.footer-normal {    
-    position:fixed;
-    bottom:0;
-    left:0;
-    padding:15px;
-}
+    #footer.footer-normal {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 15px;
+    }
 
     #footer .btn-group {
         width: 100%;
@@ -108,20 +127,25 @@ label.label-lg {
 
 
 .list-group-item .view {
-    display:table;
-    width:100%;
+    display: table;
+    width: 100%;
 }
+
 .list-group-item .view-column {
     display: table-cell;
     width: 100%;
-    vertical-align: middle;    
-    padding-right: 10px;  
+    vertical-align: middle;
+    padding-right: 10px;
 }
 
-.list-group-item .view-column:last-child {
-    padding-right: 0px;
-}
+    .list-group-item .view-column:last-child {
+        padding-right: 0px;
+    }
 
 #restaurant-list {
     margin-top: 15px;
 }
+
+    #restaurant-list label {
+        margin-bottom: 0;
+    }

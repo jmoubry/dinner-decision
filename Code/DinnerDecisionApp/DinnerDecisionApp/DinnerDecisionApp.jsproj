@@ -101,6 +101,7 @@
     <Content Include="AdMob.js" />
     <Content Include="AppRate.js" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="images\navbar.png" />
     <Content Include="locales.js" />
     <Content Include="plugins\cordova-plugin-admob-master\.project" />
     <Content Include="plugins\cordova-plugin-admob-master\demo\admob-android.jpg" />
@@ -124,7 +125,7 @@
     <Content Include="scripts\angular\angular.min.js.map" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\controllers\restaurantListController.js" />
-    <Content Include="scripts\controllers\settingController.js" />
+    <Content Include="scripts\controllers\aboutController.js" />
     <Content Include="scripts\controllers\voteController.js" />
     <Content Include="scripts\data\categories.js" />
     <Content Include="scripts\index.js" />
@@ -139,13 +140,12 @@
     <Content Include="secrets.js" />
     <Content Include="views\restaurants-search.html" />
     <Content Include="views\restaurants-list.html" />
-    <Content Include="views\settings.html" />
+    <Content Include="views\about.html" />
     <Content Include="views\vote-restaurant-odd.html" />
     <Content Include="views\vote-restaurant.html" />
     <Content Include="views\vote-result.html" />
     <Content Include="views\vote-turn.html" />
     <Content Include="views\vote.html" />
-    <Folder Include="images\" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

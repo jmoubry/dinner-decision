@@ -1,11 +1,11 @@
 ﻿<div class="container">
-    <div class="jumbotron" style="margin-top:20px;text-align:center">
-        <h1>The winner is {{winningRestaurant.name.trim()}}!</h1>
+    <div class="jumbotron">
+        <h1>The winner is<br/>{{winningRestaurant.name.trim()}}!</h1>
         <p><a ui-sref="restaurants-search" class="btn btn-lg btn-default" role="button">Start Over</a></p>
     </div>
     <div ng-show="tiedWinningRestaurants.length > 1">
         <div class="panel-group" id="accordion">
-            <div class="panel panel-warning">
+            <div class="panel panel-primary">
                 <div class="panel-heading" data-toggle="collapse" data-target="#collapseTies" style="cursor: pointer">
                     <h4 class="panel-title">
                         <strong>It was a tie!</strong> View all the winners...

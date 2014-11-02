@@ -13,7 +13,6 @@
         document.addEventListener('resume', onResume.bind(this), false);
         document.addEventListener('showkeyboard', onShowKeyboard.bind(this), false);
         document.addEventListener('hidekeyboard', onHideKeyboard.bind(this), false);
-
         
         initAd();
 

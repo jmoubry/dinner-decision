@@ -1,5 +1,7 @@
 ﻿<div class="container vote-buttons">
-    <h3>{{currentRestaurant.name}}</h3>
+    <div class="restaurant-wrapper">
+        <h3>{{currentRestaurant.name}}</h3>
+    </div>
     <button ng-class="{ 'active-vote' : selectedScore == 10000 }" ng-click="vote(10000)" type="button" class="btn btn-default btn-lg btn-block">Love It!</button>
     <button ng-class="{ 'active-vote' : selectedScore == 1 }"     ng-click="vote(1)"     type="button" class="btn btn-default btn-lg btn-block">Like It!</button>
     <button ng-class="{ 'active-vote' : selectedScore == 0 }"     ng-click="vote(0)"     type="button" class="btn btn-default btn-lg btn-block">Hate It!</button>

@@ -11,10 +11,10 @@ angular.module('dinnerDecisionApp', ['ngResource', 'ui.router'])
 
     $stateProvider
 
-        .state('settings', {
-            url: '/settings',
-            templateUrl: 'views/settings.html',
-        	controller: 'settingController'
+        .state('about', {
+            url: '/about',
+            templateUrl: 'views/about.html',
+        	controller: 'aboutController'
         })
 
 		.state('restaurants-search', {
