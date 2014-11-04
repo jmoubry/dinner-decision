@@ -14,7 +14,7 @@ dinner-decision
 
 ## Publish
 1. Increment the Version Number and Android Version Code in config.xml.
-2. Increment the Version Numbers in about.html.
+2. Increment the Version Number in aboutController.js.
 2. Generate Android keystore
         
         keytool -genkey -v -keystore dinner-decision.keystore -alias dinner-decision -keyalg RSA -keysize 2048 -validity 10000
