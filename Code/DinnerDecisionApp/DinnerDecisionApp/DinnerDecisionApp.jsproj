@@ -99,8 +99,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="AdMob.js" />
-    <Content Include="AppRate.js" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\removeHoverState.css" />
     <Content Include="images\navbar.png" />
     <Content Include="locales.js" />
     <Content Include="plugins\cordova-plugin-admob-master\.project" />
@@ -116,36 +116,6 @@
     <Content Include="plugins\cordova-plugin-admob-master\src\wp8\AdMob.cs" />
     <Content Include="plugins\cordova-plugin-admob-master\test\index.html" />
     <Content Include="plugins\cordova-plugin-admob-master\www\AdMob.js" />
-    <Content Include="plugins\cordova-plugin-apprate-master\.gitignore" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\alphabetical_index.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\class\AppRate.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\class\Locale.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\class\Locales.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\class_list.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\extra_list.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\file\AppRate.coffee.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\file\locales.coffee.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\file_list.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\index.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\javascript\application.js" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\javascript\search.js" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\method_list.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\mixin_list.html" />
-    <Content Include="plugins\cordova-plugin-apprate-master\docs\stylesheets\application.css" />
-    <Content Include="plugins\cordova-plugin-apprate-master\LICENSE" />
-    <Content Include="plugins\cordova-plugin-apprate-master\Makefile" />
-    <Content Include="plugins\cordova-plugin-apprate-master\NOTICE" />
-    <Content Include="plugins\cordova-plugin-apprate-master\plugin.xml" />
-    <Content Include="plugins\cordova-plugin-apprate-master\README.md" />
-    <Content Include="plugins\cordova-plugin-apprate-master\RELEASENOTES.md" />
-    <Content Include="plugins\cordova-plugin-apprate-master\src\android\AppRate.java" />
-    <Content Include="plugins\cordova-plugin-apprate-master\src\blackberry10\index.js" />
-    <Content Include="plugins\cordova-plugin-apprate-master\src\ios\CDVAppRate.h" />
-    <Content Include="plugins\cordova-plugin-apprate-master\src\ios\CDVAppRate.m" />
-    <Content Include="plugins\cordova-plugin-apprate-master\www\AppRate.js" />
-    <Content Include="plugins\cordova-plugin-apprate-master\www\locales.js" />
-    <Content Include="plugins\cordova-plugin-apprate-master\www_src\AppRate.coffee" />
-    <Content Include="plugins\cordova-plugin-apprate-master\www_src\locales.coffee" />
     <Content Include="scripts\angular\angular-animate.min.js" />
     <Content Include="scripts\angular\angular-animate.min.js.map" />
     <Content Include="scripts\angular\angular-resource.min.js" />

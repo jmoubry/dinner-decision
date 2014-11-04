@@ -1,0 +1,40 @@
+﻿.btn.active:focus, 
+.btn:active:focus, 
+.btn:focus {
+    outline: none;
+}
+
+.btn-default:hover {
+    color: #ffffff;
+    background-color: #999999;
+    border-color: #999999;
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: #eb6864;
+    border-color: #eb6864;
+}
+
+.btn-success:hover {
+    color: #ffffff;
+    background-color: #22b24c;
+    border-color: #22b24c;
+}
+
+.btn-info:hover {
+    color: #ffffff;
+    background-color: #336699;
+    border-color: #336699;
+}
+
+.btn-danger:hover {
+    color: #ffffff;
+    background-color: #f57a00;
+    border-color: #f57a00;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #eb6864;
+}

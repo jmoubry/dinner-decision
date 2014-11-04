@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 45px;
+    padding-top: 65px;
 }
 
 .navbar-header {
@@ -15,10 +15,6 @@
     .hidden-xxs {
         display: none !important;
     }
-}
-
-.vote-view {
-    margin-top: 20px;
 }
 
 .restaurant-wrapper {
@@ -68,19 +64,20 @@
     margin-right: auto;
 }
 
-.btn-toggle {
+.btn-toggle,
+.btn-toggle:hover,
+.btn-toggle:focus {
     color: #333;
     background-color: #fff;
     border-color: #ccc;
 }
 
-    .btn-toggle:hover,
-    .btn-toggle:focus,
+
     .btn-toggle:active,
     .btn-toggle.active {
         color: #ffffff;
-        background-color: #e53c37;
-        border-color: #e4332e;
+        background-color: #eb6864;
+        border-color: #eb6864;
         background-image: none;
     }
 

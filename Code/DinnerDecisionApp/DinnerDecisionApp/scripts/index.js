@@ -18,21 +18,6 @@
 
         // display a banner at startup
         window.plugins.AdMob.createBannerView();
-
-
-        var cfg = {
-            appStoreAppURL: {
-                ios: "itms-apps://itunes.apple.com/app/id<my_app_id>?mt=8",
-                android: "market://details?id=moubry.dinnerdecision"
-            }
-        };
-
-        AppRate.preferences.storeAppURL.ios = '<my_app_id>';
-        AppRate.preferences.storeAppURL.android = 'market://details?id=moubry.dinnerdecision';
-        AppRate.preferences.storeAppURL.blackberry = 'appworld://content/[App Id]/';
-        AppRate.preferences.storeAppURL.windows8 = 'ms-windows-store:Review?name=<the Package Family Name of the application>';
-        AppRate.promptForRating();
-        // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
     };
 
     function onPause() {

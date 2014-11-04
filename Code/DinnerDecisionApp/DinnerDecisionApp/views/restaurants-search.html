@@ -1,11 +1,10 @@
 ﻿<div class="container">
-    <h2>Restaurant Search</h2>
-    <p class="hidden-xxs"><a ng-click="skip()">Skip</a> this screen to enter your own restaurants.</p>
+    <p>Start by searching for restaurants, or <a ng-click="skip()">skip</a> this screen to add your own list of restaurants.</p>
 
     <div class="form-group">
         <label class="label-lg">Location</label>
         <div ng-class="{ 'input-group input-group-lg': searchModel.canGetLocation }">
-            <input type="text" class="form-control" ng-model="searchModel.location" ng-class="{ 'input-lg': !searchModel.canGetLocation }">
+            <input type="text" class="form-control" placeholder="e.g. Dallas, TX" ng-model="searchModel.location" ng-class="{ 'input-lg': !searchModel.canGetLocation }">
             <span ng-show="searchModel.canGetLocation" class="input-group-btn">
                 <button class="btn btn-default" ng-click="resetLocation()" type="button"><span class="glyphicon glyphicon-map-marker"></span></button>
             </span>
