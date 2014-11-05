@@ -1,6 +1,6 @@
 ﻿angular.module('dinnerDecisionApp')
 .controller('aboutController', function ($scope, cordova) {
-    $scope.app_version = 'v1.3';
+    $scope.app_version = 'v1.4';
 
     cordova.ready.then(
         function () {

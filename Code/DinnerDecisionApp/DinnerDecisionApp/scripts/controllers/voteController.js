@@ -4,18 +4,13 @@
     var restaurantNumber = parseInt($routeParams.restaurantNumber);
     var guestNumber = parseInt($routeParams.guestNumber);    
     var previousGuestNumber = modelService.getCurrentGuestNumber();
-    var isVotingClosed = modelService.isVotingClosed();
     
     // Prevent back button from letting guests see earlier guests' votes.
     if (previousGuestNumber > guestNumber) {
-        if (isVotingClosed)
-            $location.path('/result');
-        else
-            $location.path('/guest/' + previousGuestNumber);
+        $location.path('/guest/' + previousGuestNumber);
         return;
     }
 
-    modelService.setCurrentGuestNumber(guestNumber);
     var restaurants = modelService.getRestaurants();
     $scope.restaurant = restaurants[restaurantNumber -1];
     $scope.score = $scope.restaurant.votes[guestNumber - 1];

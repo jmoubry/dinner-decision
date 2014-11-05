@@ -17,7 +17,6 @@
             restaurants: [],
             isOrdered: false,
             currentGuestNumber: 1,
-            isVotingClosed: false
         };
     };
 
@@ -74,8 +73,6 @@
         removeRestaurant: removeRestaurant,
         clearRestaurants: clearRestaurants,
         getCurrentGuestNumber: function () { return model.currentGuestNumber; },
-        setCurrentGuestNumber: function (currentGuestNumber) { model.currentGuestNumber = currentGuestNumber; },
-        isVotingClosed: function () { return model.isVotingClosed; },
-        closeVoting: function () { model.isVotingClosed = true; }
+        setCurrentGuestNumber: function (currentGuestNumber) { model.currentGuestNumber = currentGuestNumber; }
     };
 });

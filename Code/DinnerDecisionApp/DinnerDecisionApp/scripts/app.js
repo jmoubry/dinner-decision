@@ -7,30 +7,32 @@ angular.module('dinnerDecisionApp', ['ngResource', 'ngRoute'])
 
 // configuring our routes 
 // =============================================================================
-.config(function ($routeProvider, $locationProvider) {
+.config(function ($routeProvider, $locationProvider, $compileProvider) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+
     $routeProvider
         .when('/search', {
-            templateUrl: '../views/search.html',
+            templateUrl: 'views/search.html',
             controller: 'restaurantSearchController'
         })
         .when('/restaurants/list', {
-            templateUrl: '../views/restaurants-list.html',
+            templateUrl: 'views/restaurants-list.html',
             controller: 'restaurantListController'
         })
         .when('/about', {
-            templateUrl: '../views/about.html',
+            templateUrl: 'views/about.html',
             controller: 'aboutController'
         })
         .when('/guest/:guestNumber', {
-            templateUrl: '../views/guest.html',
+            templateUrl: 'views/guest.html',
             controller: 'guestController'
         })
         .when('/guest/:guestNumber/restaurant/:restaurantNumber', {
-            templateUrl: '../views/vote.html',
+            templateUrl: 'views/vote.html',
             controller: 'voteController'
         })
         .when('/result', {
-            templateUrl: '../views/result.html',
+            templateUrl: 'views/result.html',
             controller: 'resultController'
         })
         .otherwise({

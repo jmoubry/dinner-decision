@@ -7,8 +7,6 @@
     $scope.tiedWinningRestaurants = [];
 
     var determineWinner = function () {
-        modelService.closeVoting();
-
         var restaurantScores = [];
 
         restaurants.forEach(function (element, index, array) {

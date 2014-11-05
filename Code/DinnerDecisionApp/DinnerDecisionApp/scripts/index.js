@@ -29,11 +29,11 @@
     };
 
     function onShowKeyboard() {
-        document.getElementById('footer').className('footer-keyboard');
+        $('#footer').removeClass('footer-normal').addClass('footer-keyboard');
     };
 
     function onHideKeyboard() {
-        setTimeout(function () { document.getElementById('footer').className('footer-normal'); }, 50);
+        setTimeout(function () { $('#footer').removeClass('footer-keyboard').addClass('footer-normal'); }, 50);
     };
 
     function initAd() {
