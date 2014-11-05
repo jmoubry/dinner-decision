@@ -7,9 +7,17 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/removeHoverState.css" rel="stylesheet" />
-    <link href="css/index.css" rel="stylesheet" />    
+    <link href="css/index.css" rel="stylesheet" />
+
+    <script src="scripts/angular/angular.min.js"></script>
+    <script src="scripts/angular/angular-resource.min.js"></script>
+    <script src="scripts/angular/angular-route.min.js"></script>
+
+    <script type="text/javascript">
+    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
 </head>
-<body ng-app="dinnerDecisionApp">
+<body ng-app="dinnerDecisionApp" ng-controller="mainController">
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -23,34 +31,19 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#" data-toggle="collapse" data-target=".navbar-collapse">Restart</a></li>
-                    <li><a ui-sref="about" data-toggle="collapse" data-target=".navbar-collapse">About</a></li>
-                    <!--<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>-->
+                    <li class="active"><a ng-click="restart()" data-toggle="collapse" data-target=".navbar-collapse">Restart</a></li>
+                    <li><a href="about" data-toggle="collapse" data-target=".navbar-collapse">About</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </div>
-    
-    <div class="main-view" ui-view></div>
-    
+
+    <div class="main-view" ng-view></div>
 
     <!-- Cordova reference, this is added to your app when it's built. -->
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
-    <script src="scripts/angular/angular.min.js"></script>
-    <script src="scripts/angular/angular-resource.min.js"></script>
-    <script src="scripts/angular/angular-ui-router.min.js"></script>
+
     <script src="scripts/jquery-2.1.1.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/app.js"></script>
@@ -58,17 +51,20 @@
     <script src="scripts/data/categories.js"></script>
     <script src="scripts/controllers/restaurantListController.js"></script>
     <script src="scripts/controllers/restaurantSearchController.js"></script>
+    <script src="scripts/controllers/guestController.js"></script>
     <script src="scripts/controllers/voteController.js"></script>
+    <script src="scripts/controllers/resultController.js"></script>
     <script src="scripts/controllers/aboutController.js"></script>
+    <script src="scripts/controllers/mainController.js"></script>
+    <script src="scripts/services/modelService.js"></script>
     <script src="scripts/services/foursquareBaseUrlService.js"></script>
     <script src="scripts/services/guidGeneratorService.js"></script>
     <script src="scripts/services/geolocationService.js"></script>
-    <script src="scripts/services/restaurantService.js"></script>
     <script src="scripts/services/restaurantGroupService.js"></script>
     <script src="scripts/services/restaurantCategoriesService.js"></script>
     <script src="scripts/services/restaurantSearchService.js"></script>
     <script src="scripts/index.js"></script>
+    <script src="scripts/util.js"></script>
     <script src="AdMob.js"></script>
-    <script src="locales.js"></script>
 </body>
 </html>

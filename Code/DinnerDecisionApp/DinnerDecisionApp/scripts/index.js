@@ -29,11 +29,11 @@
     };
 
     function onShowKeyboard() {
-        $('#footer').removeClass('footer-normal').addClass('footer-keyboard');
+        document.getElementById('footer').className('footer-keyboard');
     };
 
     function onHideKeyboard() {
-        setTimeout(function () { $('#footer').removeClass('footer-keyboard').addClass('footer-normal'); }, 50);        
+        setTimeout(function () { document.getElementById('footer').className('footer-normal'); }, 50);
     };
 
     function initAd() {
@@ -74,7 +74,7 @@
             registerAdEvents();
 
         } else {
-            alert('admob plugin not ready');
+            console.log('admob plugin not ready');
         }
     };
 

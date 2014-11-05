@@ -1,6 +1,6 @@
 ﻿<div class="container">
     <p>Start by searching for restaurants, or <a ng-click="skip()">skip</a> this screen to add your own list of restaurants.</p>
-
+    
     <div class="form-group">
         <label class="label-lg">Location</label>
         <div ng-class="{ 'input-group input-group-lg': searchModel.canGetLocation }">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <a ui-sref="restaurants-list" class="btn btn-primary" data-dismiss="modal">Skip</a>
+                    <a ng-click="skip()" class="btn btn-primary" data-dismiss="modal">Skip</a>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                    <a ui-sref="restaurants-list" class="btn btn-primary" data-dismiss="modal">Yes</a>
+                    <a ng-click="skip()" class="btn btn-primary" data-dismiss="modal">Yes</a>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <a ui-sref="restaurants-list" class="btn btn-primary" data-dismiss="modal">OK</a>
+                    <a ng-click="skip()" class="btn btn-primary" data-dismiss="modal">OK</a>
                 </div>
             </div>
         </div>

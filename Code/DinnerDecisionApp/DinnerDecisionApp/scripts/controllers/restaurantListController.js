@@ -1,9 +1,9 @@
 ﻿angular.module('dinnerDecisionApp')
-.controller('restaurantListController', function ($scope, $timeout, $location, restaurantService, restaurantSearchService, restaurantCategoriesService, geolocationService) {
+.controller('restaurantListController', function ($scope, $timeout, $location, modelService, restaurantSearchService, restaurantCategoriesService, geolocationService) {
 
     $scope.failedValidation = false;
     $scope.newRestaurant = '';
-    $scope.restaurants = restaurantService.getAll();
+    $scope.restaurants = modelService.getRestaurants();
 
     $scope.addRestaurant = function () {
         if ($scope.restaurants.length >= 1) { $scope.failedValidation = false; }
@@ -13,24 +13,24 @@
             return;
         }
 
-        restaurantService.create(newRestaurant);
+        modelService.addRestaurant(newRestaurant);
 
         $scope.newRestaurant = '';
     };
 
     $scope.removeRestaurant = function (restaurant) {
-        restaurantService.del(restaurant);
+        modelService.removeRestaurant(restaurant);
     };
 
     $scope.submit = function () {
         if ($scope.restaurants.length <= 1) {
             $scope.failedValidation = true;
         } else {
-            $location.path('/vote/turn');
+            $location.path('/guest/1');
         }
     };
 
     $scope.back = function () {        
-        $location.path('/restaurants/search');
+        $location.path('/search');
     };
 });

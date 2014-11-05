@@ -3,60 +3,41 @@
 var GLOBAL_SECRETS;
 
 // =============================================================================
-angular.module('dinnerDecisionApp', ['ngResource', 'ui.router'])
+angular.module('dinnerDecisionApp', ['ngResource', 'ngRoute'])
 
 // configuring our routes 
 // =============================================================================
-.config(function ($stateProvider, $urlRouterProvider) {
-
-    $stateProvider
-
-        .state('about', {
-            url: '/about',
-            templateUrl: 'views/about.html',
-        	controller: 'aboutController'
+.config(function ($routeProvider, $locationProvider) {
+    $routeProvider
+        .when('/search', {
+            templateUrl: '../views/search.html',
+            controller: 'restaurantSearchController'
         })
-
-		.state('restaurants-search', {
-		    url: '/restaurants/search',
-		    templateUrl: 'views/restaurants-search.html',
-		    controller: 'restaurantSearchController'
-		})
-		.state('restaurants-list', {
-		    url: '/restaurants/list',
-		    templateUrl: 'views/restaurants-list.html',
-		    controller: 'restaurantListController'
-		})
-
-        .state('vote', {
-            url: '/vote',
-            templateUrl: 'views/vote.html',
+        .when('/restaurants/list', {
+            templateUrl: '../views/restaurants-list.html',
+            controller: 'restaurantListController'
+        })
+        .when('/about', {
+            templateUrl: '../views/about.html',
+            controller: 'aboutController'
+        })
+        .when('/guest/:guestNumber', {
+            templateUrl: '../views/guest.html',
+            controller: 'guestController'
+        })
+        .when('/guest/:guestNumber/restaurant/:restaurantNumber', {
+            templateUrl: '../views/vote.html',
             controller: 'voteController'
         })
+        .when('/result', {
+            templateUrl: '../views/result.html',
+            controller: 'resultController'
+        })
+        .otherwise({
+            redirectTo: '/search'
+        });
 
-        // nested states 
-        // each of these sections will have their own view
-        // url will be nested (/vote/turn)
-        .state('vote.turn', {
-            url: '/turn',
-            templateUrl: 'views/vote-turn.html'
-        })
-        .state('vote.restaurant', {
-            url: '/restaurant',
-            templateUrl: 'views/vote-restaurant.html'
-        })
-        .state('vote.restaurantodd', {
-            url: '/restaurant-odd',
-            templateUrl: 'views/vote-restaurant-odd.html'
-        })
-        .state('vote.result', {
-            url: '/result',
-            templateUrl: 'views/vote-result.html'
-        })
-
-    // catch all route
-    // send users to the restaurants page 
-    $urlRouterProvider.otherwise('/restaurants/search');
+    $locationProvider.html5Mode(true);
 })
 .factory("cordova", ['$q', "$window", "$timeout", function ($q, $window, $timeout) {
      var deferred = $q.defer();

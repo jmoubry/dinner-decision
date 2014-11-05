@@ -1,23 +1,16 @@
 ﻿angular.module('dinnerDecisionApp')
-.controller('restaurantSearchController', function ($scope, $location, restaurantService, restaurantSearchService, restaurantCategoriesService, geolocationService) {
+.controller('restaurantSearchController', function ($scope, $location, modelService, restaurantSearchService, restaurantCategoriesService, geolocationService) {
 
     $scope.categories = [];
     $scope.restaurants = [];
 
-    $scope.searchModel = {
-        category: {},
-        near: "Getting location...",
-        canGetLocation: false,
-        useLatLong: false,
-        latitude: 0,
-        longitude: 0,
-        prices: [false, false, false, false]
-    };
+    $scope.searchModel = modelService.getSearchModel();
     
     var geolocation = "Getting location...";
 
     var loadCategories = function () {
         restaurantCategoriesService.getCategories().then(function (categories) {
+            modelService.setCategories(categories);
             $scope.categories = categories;
             $scope.searchModel.category = categories[0];
         });
@@ -56,12 +49,10 @@
     };
 
     $scope.skip = function () {
-        restaurantService.delAll();
         $location.path('/restaurants/list');
     };
 
     $scope.submit = function () {
-        restaurantService.delAll();
 
         if (!geolocation && !$scope.searchModel.location) {
             $('#noLocationModal').modal('show');
@@ -80,10 +71,12 @@
 
                 $.each(list, function (index, item) {
                     if ($.inArray(item.venue.name, uniqueNames) === -1) {
-                        restaurantService.create(item.venue.name);
+                        modelService.addRestaurant(item.venue.name);
                         uniqueNames.push(item.venue.name);
                     }
                 });
+
+                modelService.setSearchModel($scope.searchModel);
 
                 $location.path('/restaurants/list');
             }
@@ -92,6 +85,13 @@
         });
     };
 
-    updateAddress();
-    loadCategories();
+    modelService.clearRestaurants();
+
+    if (!$scope.searchModel.canGetLocation) {
+        updateAddress();
+    }
+
+    if ($scope.categories.length == 0) {
+        loadCategories();
+    }
 });
