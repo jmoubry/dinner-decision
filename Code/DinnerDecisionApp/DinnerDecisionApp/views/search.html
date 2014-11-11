@@ -86,7 +86,7 @@
     <div id="footer" class="footer-normal">
         <div class="btn-group btn-group-lg">
             <a ng-click="skip()" class="btn btn-default btn-lg">Skip</a>
-            <a ng-click="submit()" class="btn btn-primary btn-lg">Next</a>
+            <a ng-click="submit()" ng-class="{ 'disabled': isSubmitting }" class="btn btn-primary btn-lg">Next</a>
         </div>
     </div>
 </div>

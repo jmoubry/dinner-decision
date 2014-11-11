@@ -52,37 +52,51 @@
         $location.path('/restaurants/list');
     };
 
+    $scope.isSubmitting = false;
+
     $scope.submit = function () {
-
-        if (!geolocation && !$scope.searchModel.location) {
-            $('#noLocationModal').modal('show');
+        if ($scope.isSubmitting)
             return;
-        }
 
-        $scope.searchModel.useLatLong = $scope.searchModel.location === geolocation || $scope.searchModel.location === 'Current Location';
+        $scope.isSubmitting = true;
 
-        restaurantSearchService.search($scope.searchModel).then(function (list) {
-            if (list == null) {
-                $('#noInternetModal').modal('show');
-            } else if (list.length === 0) {
-                $('#noMatchesModal').modal('show');
-            } else {
-                var uniqueNames = [];
-
-                $.each(list, function (index, item) {
-                    if ($.inArray(item.venue.name, uniqueNames) === -1) {
-                        modelService.addRestaurant(item.venue.name);
-                        uniqueNames.push(item.venue.name);
-                    }
-                });
-
-                modelService.setSearchModel($scope.searchModel);
-
-                $location.path('/restaurants/list');
+        try {
+            if (!geolocation && !$scope.searchModel.location) {
+                $scope.isSubmitting = false;
+                $('#noLocationModal').modal('show');
+                return;
             }
-        }, function (error) {
-            $('#noInternetModal').modal('show');
-        });
+
+            $scope.searchModel.useLatLong = $scope.searchModel.location === geolocation || $scope.searchModel.location === 'Current Location';
+
+            restaurantSearchService.search($scope.searchModel).then(function (list) {
+                if (list == null) {
+                    $scope.isSubmitting = false;
+                    $('#noInternetModal').modal('show');
+                } else if (list.length === 0) {
+                    $scope.isSubmitting = false;
+                    $('#noMatchesModal').modal('show');
+                } else {
+                    var uniqueNames = [];
+
+                    $.each(list, function (index, item) {
+                        if ($.inArray(item.venue.name, uniqueNames) === -1) {
+                            modelService.addRestaurant(item.venue.name);
+                            uniqueNames.push(item.venue.name);
+                        }
+                    });
+
+                    modelService.setSearchModel($scope.searchModel);
+
+                    $location.path('/restaurants/list');
+                }
+            }, function (error) {
+                $('#noInternetModal').modal('show');
+                $scope.isSubmitting = false;
+            });
+        } catch (err) {
+            $scope.isSubmitting = false;
+        }
     };
 
     modelService.clearRestaurants();
