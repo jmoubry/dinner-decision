@@ -26,9 +26,13 @@
       <Configuration>Debug</Configuration>
       <Platform>Windows-ARM</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|Windows Phone">
+    <ProjectConfiguration Include="Debug|Windows Phone 8">
       <Configuration>Debug</Configuration>
-      <Platform>Windows Phone</Platform>
+      <Platform>Windows Phone 8</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows Phone (Universal)">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows Phone (Universal)</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Android">
       <Configuration>Release</Configuration>
@@ -54,9 +58,13 @@
       <Configuration>Release</Configuration>
       <Platform>Windows-ARM</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Windows Phone">
+    <ProjectConfiguration Include="Release|Windows Phone 8">
       <Configuration>Release</Configuration>
-      <Platform>Windows Phone</Platform>
+      <Platform>Windows Phone 8</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows Phone (Universal)">
+      <Configuration>Release</Configuration>
+      <Platform>Windows Phone (Universal)</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Distribution|Android">
       <Configuration>Distribution</Configuration>
@@ -82,13 +90,17 @@
       <Configuration>Distribution</Configuration>
       <Platform>Windows-ARM</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Distribution|Windows Phone">
+    <ProjectConfiguration Include="Distribution|Windows Phone 8">
       <Configuration>Distribution</Configuration>
-      <Platform>Windows Phone</Platform>
+      <Platform>Windows Phone 8</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|Windows Phone (Universal)">
+      <Configuration>Distribution</Configuration>
+      <Platform>Windows Phone (Universal)</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>542b0349-2365-4ce1-af18-72c9c54c6371</ProjectGuid>
+    <ProjectGuid>cafebaee-6551-41a2-ae4c-9922dfbe55ef</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
     <DefaultReferenceGroup>Implicit (Multi-Device Apps)</DefaultReferenceGroup>
@@ -102,23 +114,115 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\removeHoverState.css" />
     <Content Include="images\navbar.png" />
-    <Content Include="plugins\cordova-plugin-admob-master\.project" />
-    <Content Include="plugins\cordova-plugin-admob-master\demo\admob-android.jpg" />
-    <Content Include="plugins\cordova-plugin-admob-master\demo\admob-ipad-landscape.jpg" />
-    <Content Include="plugins\cordova-plugin-admob-master\demo\admob-iphone.jpg" />
-    <Content Include="plugins\cordova-plugin-admob-master\LICENSE" />
-    <Content Include="plugins\cordova-plugin-admob-master\plugin.xml" />
-    <Content Include="plugins\cordova-plugin-admob-master\README.md" />
-    <Content Include="plugins\cordova-plugin-admob-master\src\android\AdMob.java" />
-    <Content Include="plugins\cordova-plugin-admob-master\src\ios\CDVAdMob.h" />
-    <Content Include="plugins\cordova-plugin-admob-master\src\ios\CDVAdMob.m" />
-    <Content Include="plugins\cordova-plugin-admob-master\src\wp8\AdMob.cs" />
-    <Content Include="plugins\cordova-plugin-admob-master\test\index.html" />
-    <Content Include="plugins\cordova-plugin-admob-master\www\AdMob.js" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\.fetch.json" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\demo\admob-android.jpg" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\demo\admob-ipad-landscape.jpg" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\demo\admob-iphone.jpg" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\LICENSE" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\plugin.xml" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\README.md" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\src\android\AdMob.java" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\src\ios\CDVAdMob.h" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\src\ios\CDVAdMob.m" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\src\wp8\AdMob.cs" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\test\index.html" />
+    <Content Include="plugins\com.rjfun.cordova.plugin.admob\www\AdMob.js" />
+    <Content Include="plugins\org.apache.cordova.device\.fetch.json" />
+    <Content Include="plugins\org.apache.cordova.device\CONTRIBUTING.md" />
+    <Content Include="plugins\org.apache.cordova.device\doc\de\index.md" />
+    <Content Include="plugins\org.apache.cordova.device\doc\es\index.md" />
+    <Content Include="plugins\org.apache.cordova.device\doc\fr\index.md" />
+    <Content Include="plugins\org.apache.cordova.device\doc\index.md" />
+    <Content Include="plugins\org.apache.cordova.device\doc\it\index.md" />
+    <Content Include="plugins\org.apache.cordova.device\doc\ja\index.md" />
+    <Content Include="plugins\org.apache.cordova.device\doc\ko\index.md" />
+    <Content Include="plugins\org.apache.cordova.device\doc\pl\index.md" />
+    <Content Include="plugins\org.apache.cordova.device\doc\ru\index.md" />
+    <Content Include="plugins\org.apache.cordova.device\doc\zh\index.md" />
+    <Content Include="plugins\org.apache.cordova.device\LICENSE" />
+    <Content Include="plugins\org.apache.cordova.device\NOTICE" />
+    <Content Include="plugins\org.apache.cordova.device\package.json" />
+    <Content Include="plugins\org.apache.cordova.device\plugin.xml" />
+    <Content Include="plugins\org.apache.cordova.device\README.md" />
+    <Content Include="plugins\org.apache.cordova.device\RELEASENOTES.md" />
+    <Content Include="plugins\org.apache.cordova.device\src\android\Device.java" />
+    <Content Include="plugins\org.apache.cordova.device\src\blackberry10\index.js" />
+    <Content Include="plugins\org.apache.cordova.device\src\browser\DeviceProxy.js" />
+    <Content Include="plugins\org.apache.cordova.device\src\firefoxos\DeviceProxy.js" />
+    <Content Include="plugins\org.apache.cordova.device\src\ios\CDVDevice.h" />
+    <Content Include="plugins\org.apache.cordova.device\src\ios\CDVDevice.m" />
+    <Content Include="plugins\org.apache.cordova.device\src\tizen\DeviceProxy.js" />
+    <Content Include="plugins\org.apache.cordova.device\src\ubuntu\device.cpp" />
+    <Content Include="plugins\org.apache.cordova.device\src\ubuntu\device.h" />
+    <Content Include="plugins\org.apache.cordova.device\src\ubuntu\device.js" />
+    <Content Include="plugins\org.apache.cordova.device\src\windows8\DeviceProxy.js" />
+    <Content Include="plugins\org.apache.cordova.device\src\windows\DeviceProxy.js" />
+    <Content Include="plugins\org.apache.cordova.device\src\wp\Device.cs" />
+    <Content Include="plugins\org.apache.cordova.device\tests\plugin.xml" />
+    <Content Include="plugins\org.apache.cordova.device\tests\tests.js" />
+    <Content Include="plugins\org.apache.cordova.device\www\device.js" />
+    <Content Include="plugins\org.apache.cordova.geolocation\.fetch.json" />
+    <Content Include="plugins\org.apache.cordova.geolocation\CONTRIBUTING.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\doc\de\index.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\doc\es\index.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\doc\fr\index.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\doc\index.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\doc\it\index.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\doc\ja\index.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\doc\ko\index.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\doc\pl\index.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\doc\ru\index.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\doc\zh\index.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\LICENSE" />
+    <Content Include="plugins\org.apache.cordova.geolocation\NOTICE" />
+    <Content Include="plugins\org.apache.cordova.geolocation\package.json" />
+    <Content Include="plugins\org.apache.cordova.geolocation\plugin.xml" />
+    <Content Include="plugins\org.apache.cordova.geolocation\README.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\RELEASENOTES.md" />
+    <Content Include="plugins\org.apache.cordova.geolocation\src\firefoxos\GeolocationProxy.js" />
+    <Content Include="plugins\org.apache.cordova.geolocation\src\ios\CDVLocation.h" />
+    <Content Include="plugins\org.apache.cordova.geolocation\src\ios\CDVLocation.m" />
+    <Content Include="plugins\org.apache.cordova.geolocation\src\ubuntu\geolocation.cpp" />
+    <Content Include="plugins\org.apache.cordova.geolocation\src\ubuntu\geolocation.h" />
+    <Content Include="plugins\org.apache.cordova.geolocation\src\windows\GeolocationProxy.js" />
+    <Content Include="plugins\org.apache.cordova.geolocation\src\wp\GeoLocation.cs" />
+    <Content Include="plugins\org.apache.cordova.geolocation\tests\plugin.xml" />
+    <Content Include="plugins\org.apache.cordova.geolocation\tests\tests.js" />
+    <Content Include="plugins\org.apache.cordova.geolocation\www\blackberry10\GeolocationProxy.js" />
+    <Content Include="plugins\org.apache.cordova.geolocation\www\Coordinates.js" />
+    <Content Include="plugins\org.apache.cordova.geolocation\www\geolocation.js" />
+    <Content Include="plugins\org.apache.cordova.geolocation\www\Position.js" />
+    <Content Include="plugins\org.apache.cordova.geolocation\www\PositionError.js" />
+    <Content Include="plugins\org.apache.cordova.statusbar\.fetch.json" />
+    <Content Include="plugins\org.apache.cordova.statusbar\CONTRIBUTING.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\doc\de\index.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\doc\es\index.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\doc\fr\index.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\doc\index.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\doc\it\index.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\doc\ja\index.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\doc\ko\index.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\doc\pl\index.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\doc\ru\index.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\doc\zh\index.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\LICENSE" />
+    <Content Include="plugins\org.apache.cordova.statusbar\NOTICE" />
+    <Content Include="plugins\org.apache.cordova.statusbar\package.json" />
+    <Content Include="plugins\org.apache.cordova.statusbar\plugin.xml" />
+    <Content Include="plugins\org.apache.cordova.statusbar\README.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\RELEASENOTES.md" />
+    <Content Include="plugins\org.apache.cordova.statusbar\src\android\StatusBar.java" />
+    <Content Include="plugins\org.apache.cordova.statusbar\src\ios\CDVStatusBar.h" />
+    <Content Include="plugins\org.apache.cordova.statusbar\src\ios\CDVStatusBar.m" />
+    <Content Include="plugins\org.apache.cordova.statusbar\src\wp\StatusBar.cs" />
+    <Content Include="plugins\org.apache.cordova.statusbar\tests\plugin.xml" />
+    <Content Include="plugins\org.apache.cordova.statusbar\tests\tests.js" />
+    <Content Include="plugins\org.apache.cordova.statusbar\www\statusbar.js" />
     <Content Include="scripts\angular\angular-resource.min.js" />
     <Content Include="scripts\angular\angular-resource.min.js.map" />
     <Content Include="scripts\angular\angular-route.min.js" />
     <Content Include="scripts\angular\angular-route.min.js.map" />
+    <Content Include="scripts\angular\angular.js" />
     <Content Include="scripts\angular\angular.min.js" />
     <Content Include="scripts\angular\angular.min.js.map" />
     <Content Include="scripts\app.js" />
@@ -154,16 +258,16 @@
     <Content Include="merges\android\scripts\android2.3-jscompat.js" />
     <Content Include="merges\android\scripts\platformOverrides.js" />
     <Folder Include="merges\ios\" />
-    <Content Include="merges\windows8\scripts\platformOverrides.js" />
-    <Content Include="merges\windows8\scripts\winstore-jscompat.js" />
+    <Content Include="merges\windows\scripts\platformOverrides.js" />
+    <Content Include="merges\windows\scripts\winstore-jscompat.js" />
     <Folder Include="merges\wp8\" />
     <Folder Include="res\icons\android\" />
     <Folder Include="res\icons\ios\" />
     <Folder Include="res\icons\wp8\" />
-    <Folder Include="res\icons\windows8\" />
+    <Folder Include="res\icons\windows\" />
     <Folder Include="res\screens\android\" />
     <Folder Include="res\screens\ios\" />
-    <Folder Include="res\screens\windows8\" />
+    <Folder Include="res\screens\windows\" />
     <Folder Include="res\screens\wp8\" />
   </ItemGroup>
   <ItemGroup>
@@ -194,9 +298,14 @@
     <Content Include="res\icons\ios\icon-76-2x.png" />
     <Content Include="res\icons\ios\icon-small.png" />
     <Content Include="res\icons\ios\icon-small-2x.png" />
-    <Content Include="res\icons\windows8\logo.png" />
-    <Content Include="res\icons\windows8\smalllogo.png" />
-    <Content Include="res\icons\windows8\storelogo.png" />
+    <Content Include="res\icons\windows\logo.png" />
+    <Content Include="res\icons\windows\smalllogo.png" />
+    <Content Include="res\icons\windows\Square150x150Logo.scale-240.png" />
+    <Content Include="res\icons\windows\Square44x44Logo.scale-240.png" />
+    <Content Include="res\icons\windows\Square71x71Logo.scale-240.png" />
+    <Content Include="res\icons\windows\storelogo.png" />
+    <Content Include="res\icons\windows\StoreLogo.scale-240.png" />
+    <Content Include="res\icons\windows\Wide310x150Logo.scale-240.png" />
     <Content Include="res\icons\wp8\icon-62-tile.png" />
     <Content Include="res\icons\wp8\icon-173-tile.png" />
     <Content Include="res\screens\android\screen-hdpi-landscape.png" />
@@ -214,7 +323,8 @@
     <Content Include="res\screens\ios\screen-iphone-568h-2x.png" />
     <Content Include="res\screens\ios\screen-iphone-portrait.png" />
     <Content Include="res\screens\ios\screen-iphone-portrait-2x.png" />
-    <Content Include="res\screens\windows8\splashscreen.png" />
+    <Content Include="res\screens\windows\splashscreen.png" />
+    <Content Include="res\screens\windows\SplashScreen.scale-240.png" />
     <Content Include="res\screens\wp8\screen-portrait.jpg" />
   </ItemGroup>
   <PropertyGroup>
@@ -236,18 +346,21 @@
     <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
     <TypeScriptSourceMap>false</TypeScriptSourceMap>
   </PropertyGroup>
-  <Import Project="$(AppData)\npm\node_modules\vs-mda-targets\Microsoft.MDA.targets" />
-  <Import Project="$(AppData)\npm\node_modules\vs-mda-targets\Microsoft.TypeScript.MDA.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CordovaTools\vs-mda-targets\Microsoft.MDA.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CordovaTools\vs-mda-targets\Microsoft.TypeScript.MDA.targets" />
   <PropertyGroup>
-    <ProjectUISubcaption>Multi-Device Hybrid App</ProjectUISubcaption>
+    <ProjectUISubcaption>Tools for Apache Cordova</ProjectUISubcaption>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetPlatformIdentifier>MDD</TargetPlatformIdentifier>
   </PropertyGroup>
   <Target Name="EnsureBuildPrerequisites">
     <!-- These errors will trigger if building from inside Visual Studio and requirements could not be determined -->
     <Error Condition="$(MDAPropertiesEvaluated) == 'true' And $(NodeJsDir) == ''" Text="Path to NodeJs could not be determined. Please check that NodeJs has been installed." />
-    <Error Condition="$(MDAPropertiesEvaluated) == 'true' And $(MDAVsixDir) == ''" Text="Path to the Visual Studio Extension for Multi-Device Hybrid Apps could not be determined. Please check that the extension has been installed." />
+    <Error Condition="$(MDAPropertiesEvaluated) == 'true' And $(MDAVsixDir) == ''" Text="Path to the Visual Studio Extension for Tools for Apache Cordova could not be determined. Please check that the extension has been installed." />
     <!-- These errors will trigger if building from outside Visual Studio (e.g. command line) and environment variables have not been set -->
     <Error Condition="$(MDAPropertiesEvaluated) == '' And $(NodeJsDir) == ''" Text="Path to NodeJs has not been specified. Please check that NodeJs has been installed and set the NodeJsDir environment variable before building." />
-    <Error Condition="$(MDAPropertiesEvaluated) == '' And $(MDAVsixDir) == ''" Text="Path to Visual Studio Extension for Multi-Device Hybrid Apps has not been specified. Please install it and set the MDAVsixDir environment variable before building." />
+    <Error Condition="$(MDAPropertiesEvaluated) == '' And $(MDAVsixDir) == ''" Text="Path to Visual Studio Extension for Tools for Apache Cordova has not been specified. Please install it and set the MDAVsixDir environment variable before building." />
     <!-- Sanity check that things exist in the specified places. These are more likely to fail if building outside Visual Studio and the required environment variables have not been set, or set incorrectly. -->
     <Error Condition="!Exists('$(NodeJsDir)') Or !Exists('$(NodeJsDir)\node.exe')" Text="The specified NodeJs directory $(NodeJsDir) either does not exist, or does not contain node.exe. Please check that NodeJs has been installed, and set the NodeJsDir variable to the correct directory." />
     <Error Condition="!Exists('$(MDAVsixDir)') Or !Exists('$(MDAVsixDir)\packages\vs-mda')" Text="The specified directory to the Visual Studio extension $(MDAVsixDir)\node.exe either does not exist, or does not contain a packages\vs-mda sub-directory. Please check that the extension directory exists and set the MDAVsixDir variable to the correct directory." />
