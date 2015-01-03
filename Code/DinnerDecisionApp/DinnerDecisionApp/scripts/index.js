@@ -3,7 +3,7 @@
 // To debug code on page load in Ripple or on Android devices/emulators: launch your app, set breakpoints, 
 // and then run "window.location.reload()" in the JavaScript Console.
 
-window.isDebug = true;
+window.isUsingRippleEmulator = true;
 window.isTestAd = true;
 
 (function () {
@@ -17,7 +17,7 @@ window.isTestAd = true;
         } else if (window.device.platform.match(/iPhone|iPod|iPad|iOS/i)) {
             $('body').addClass('ios');
 
-            if (window.isDebug) {
+            if (window.isUsingRippleEmulator) {
                 $('.ios-status-bar').css('display', 'block');
             }
         }
