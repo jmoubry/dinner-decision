@@ -2,11 +2,42 @@
     padding-top: 65px;
 }
 
+.back-button {
+    width: 40px;
+}
+
+.back-button .glyphicon {
+    top: 2px;
+}
+
+.android .back-button {
+    display: none;
+}
+
+.dd-logo {
+    margin: 0 auto;
+}
+
+.android .dd-logo {
+    margin: 0;
+}
+
+.dd-logo img {
+    width: 200px;
+    padding-top: 2px;
+}
+
+.dd-spacer {
+    width: 40px;
+}
+
 .navbar-header {
-    background-image: url('../images/navbar.png');
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position-y: center;
+    display: flex;
+}
+
+.navbar-inverse .navbar-brand:focus, 
+.navbar-inverse .navbar-brand:hover {
+    background-color: transparent;
 }
 
 /* height of nexus one viewport: 458px */
@@ -20,7 +51,7 @@
 .restaurant-wrapper {
     min-height: 92px;
     padding-bottom: 20px;
-    padding-top:20px;
+    padding-top: 20px;
     display: table;
     width: 100%;
 }

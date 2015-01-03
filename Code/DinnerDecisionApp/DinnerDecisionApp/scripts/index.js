@@ -8,6 +8,10 @@
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
+        if (window.device.platform === 'Android') {
+            $('body').addClass('android');
+        }
+
         // Handle the Cordova events
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
