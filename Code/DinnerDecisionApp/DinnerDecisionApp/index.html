@@ -18,46 +18,49 @@
     </script>
 </head>
 <body ng-app="dinnerDecisionApp" ng-controller="mainController">
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">                
-                <a class="btn btn-link navbar-btn back-button" onclick="window.history.back()">
-                    <span class="glyphicon glyphicon-chevron-left" ng-class="{hide: !showBackButton}"></span>
-                </a>
-                <a class="btn btn-link dd-logo" href="about"><img src="../images/navbar.png"/></a>
-                <span class="dd-spacer"></span>
+        <!-- Fixed navbar -->
+        <div class="ios-status-bar">
+            12:05 PM
+        </div>
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="btn btn-link back-button" onclick="window.history.back()">
+                        <span class="glyphicon glyphicon-chevron-left" ng-class="{hide: !showBackButton}"></span>
+                    </a>
+                    <a class="btn btn-link dd-logo" href="about"><img src="../images/navbar.png" /></a>
+                    <span class="dd-spacer"></span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="main-view" ng-view></div>
+        <div class="main-view" ng-view></div>
 
-    <!-- Cordova reference, this is added to your app when it's built. -->
-    <script src="cordova.js"></script>
-    <script src="scripts/platformOverrides.js"></script>
+        <!-- Cordova reference, this is added to your app when it's built. -->
+        <script src="cordova.js"></script>
+        <script src="scripts/platformOverrides.js"></script>
 
-    <script src="scripts/jquery-2.1.1.min.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="secrets.js"></script>
-    <script src="scripts/data/categories.js"></script>
-    <script src="scripts/controllers/restaurantListController.js"></script>
-    <script src="scripts/controllers/restaurantSearchController.js"></script>
-    <script src="scripts/controllers/guestController.js"></script>
-    <script src="scripts/controllers/voteController.js"></script>
-    <script src="scripts/controllers/resultController.js"></script>
-    <script src="scripts/controllers/aboutController.js"></script>
-    <script src="scripts/controllers/mainController.js"></script>
-    <script src="scripts/services/modelService.js"></script>
-    <script src="scripts/services/foursquareBaseUrlService.js"></script>
-    <script src="scripts/services/guidGeneratorService.js"></script>
-    <script src="scripts/services/geolocationService.js"></script>
-    <script src="scripts/services/restaurantGroupService.js"></script>
-    <script src="scripts/services/restaurantCategoriesService.js"></script>
-    <script src="scripts/services/restaurantSearchService.js"></script>
-    <script src="scripts/index.js"></script>
-    <script src="scripts/util.js"></script>
-    <script src="AdMob.js"></script>
+        <script src="scripts/jquery-2.1.1.min.js"></script>
+        <script src="scripts/bootstrap.min.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="secrets.js"></script>
+        <script src="scripts/data/categories.js"></script>
+        <script src="scripts/controllers/restaurantListController.js"></script>
+        <script src="scripts/controllers/restaurantSearchController.js"></script>
+        <script src="scripts/controllers/guestController.js"></script>
+        <script src="scripts/controllers/voteController.js"></script>
+        <script src="scripts/controllers/resultController.js"></script>
+        <script src="scripts/controllers/aboutController.js"></script>
+        <script src="scripts/controllers/mainController.js"></script>
+        <script src="scripts/services/modelService.js"></script>
+        <script src="scripts/services/foursquareBaseUrlService.js"></script>
+        <script src="scripts/services/guidGeneratorService.js"></script>
+        <script src="scripts/services/geolocationService.js"></script>
+        <script src="scripts/services/restaurantGroupService.js"></script>
+        <script src="scripts/services/restaurantCategoriesService.js"></script>
+        <script src="scripts/services/restaurantSearchService.js"></script>
+        <script src="scripts/index.js"></script>
+        <script src="scripts/util.js"></script>
+        <script src="AdMob.js"></script>
 </body>
 </html>

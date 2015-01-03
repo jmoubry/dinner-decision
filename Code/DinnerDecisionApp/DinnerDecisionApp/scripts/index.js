@@ -2,14 +2,24 @@
 // http://go.microsoft.com/fwlink/?LinkID=397704
 // To debug code on page load in Ripple or on Android devices/emulators: launch your app, set breakpoints, 
 // and then run "window.location.reload()" in the JavaScript Console.
+
+window.isDebug = true;
+window.isTestAd = true;
+
 (function () {
-    "use strict";
+    'use strict';
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
         if (window.device.platform === 'Android') {
             $('body').addClass('android');
+        } else if (window.device.platform.match(/iPhone|iPod|iPad|iOS/i)) {
+            $('body').addClass('ios');
+
+            if (window.isDebug) {
+                $('.ios-status-bar').css('display', 'block');
+            }
         }
 
         // Handle the Cordova events
@@ -71,7 +81,7 @@
                 bannerAtTop: false, // set to true, to put banner at top
                 overlap: false, // set to true, to allow banner overlap webview
                 offsetTopBar: false, // set to true to avoid ios7 status bar overlap
-                isTesting: true, // receiving test ad
+                isTesting: window.isTestAd, // receiving test ad
                 autoShow: true // auto show interstitial ad when loaded
             });
 

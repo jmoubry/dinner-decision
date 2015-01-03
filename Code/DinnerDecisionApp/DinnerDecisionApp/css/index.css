@@ -2,8 +2,39 @@
     padding-top: 65px;
 }
 
+body.ios {
+    padding-top: 85px;
+}
+
+.ios-status-bar {
+    display: none;
+    position: fixed;
+    top: 0;
+    color:  white;
+    z-index: 10000;
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    height: 20px;
+    overflow: hidden;
+}
+
+.navbar-header {
+    display: flex;
+}
+
+.ios .navbar-header {
+    padding-top: 20px;
+}
+
+.navbar-inverse .navbar-brand:focus, 
+.navbar-inverse .navbar-brand:hover {
+    background-color: transparent;
+}
+
 .back-button {
     width: 40px;
+    padding-top: 12px;
 }
 
 .back-button .glyphicon {
@@ -27,17 +58,25 @@
     padding-top: 2px;
 }
 
+.ios .dd-logo img {
+    padding-top: 1px;
+}
+
 .dd-spacer {
     width: 40px;
 }
 
-.navbar-header {
-    display: flex;
+.dd-about {
+    padding-bottom: 30px;
 }
 
-.navbar-inverse .navbar-brand:focus, 
-.navbar-inverse .navbar-brand:hover {
-    background-color: transparent;
+.dd-about p {
+    font-size: 18px;
+    margin-bottom:15px;
+}
+
+.dd-about h2 {
+    margin-top: 0;
 }
 
 /* height of nexus one viewport: 458px */
