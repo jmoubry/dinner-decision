@@ -1,5 +1,5 @@
 ﻿angular.module('dinnerDecisionApp')
-.controller('mainController', function ($scope, $rootScope, $location, modelService) {
+.controller('mainController', function ($scope, $rootScope, $location, modelService, deviceReady) {
     $scope.restart = function () {
         modelService.clearModel();
         $location.path('/');
@@ -14,4 +14,19 @@
     $rootScope.$on('$locationChangeSuccess', function () {
         $rootScope.showBackButton = $location.path() !== '/search';
     });
+
+    deviceReady(
+        function () {
+            var isIOS =  window.device.platform.match(/iPhone|iPod|iPad|iOS/i);
+
+            $rootScope.device = {
+                name: window.device.name,
+                version: window.device.version,
+                platform: window.device.platform,
+                isAndroid: window.device.platform === 'Android',
+                isIOS: isIOS,
+                showIOSStatusBarPlaceholder: isIOS && window.isUsingRippleEmulator
+            };
+        }
+    );
 });

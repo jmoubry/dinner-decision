@@ -1,22 +1,18 @@
 ﻿angular.module('dinnerDecisionApp')
-.factory("geolocationService", ["$rootScope", "$q", "$window", "$resource", "cordova", "foursquareBaseUrlService", function ($rootScope, $q, $window, $resource, cordova, foursquareBaseUrlService) { 
+.factory("geolocationService", ["$rootScope", "$q", "$window", "$resource", "deviceReady", "foursquareBaseUrlService", function ($rootScope, $q, $window, $resource, deviceReady, foursquareBaseUrlService) {
     return {
-        getCurrentPosition: function () {
-            return cordova.ready.then(
-                function () {
-                    var deferred = $q.defer();
-                    $window.navigator.geolocation.getCurrentPosition(
-                        function (successValue) {
-                            $rootScope.$apply(function () { deferred.resolve(successValue); });
-                        },
-                        function (errorValue) {
-                            $rootScope.$apply(function () { deferred.reject(errorValue); });
-                        }
-                    );
-
-                    return deferred.promise;
-                }
-            );
+        getCurrentPosition: function (callback) {
+            deviceReady(function () {
+                $window.navigator.geolocation.getCurrentPosition(function (position) {
+                    $rootScope.$apply(function () {
+                        callback(position);
+                    });
+                }, function (error) {
+                    $rootScope.$apply(function () {
+                        throw new Error('Unable to retrieve position');
+                    });
+                });
+            })
         },
 
         getAddressFromPosition: function (position) {
@@ -43,12 +39,12 @@
                                     longitude: position.coords.longitude
                                 };
                             }
-                        );
+                            );
                 },
                 function (error) {
                     return null;
                 }
-            );
+        );
         }
     }
 }]);

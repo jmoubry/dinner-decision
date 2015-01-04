@@ -17,21 +17,22 @@
     };
 
     var updateAddress = function () {
-        geolocationService.getCurrentPosition()
-            .then(geolocationService.getAddressFromPosition, function (error) { setLocationToNotFound(); })
-            .then(function (address) {
-                if (address) {
-                    geolocation = address.location;
-                    $scope.searchModel.location = address.location;
-                    $scope.searchModel.latitude = address.latitude;
-                    $scope.searchModel.longitude = address.longitude;
-                    $scope.searchModel.canGetLocation = true;
-                } else {
-                    setLocationToNotFound();
-                }
-            }, function (errorMessage) {
-                setLocationToNotFound();
-            });
+        geolocationService.getCurrentPosition(function (position) {
+            geolocationService.getAddressFromPosition(position)
+                 .then(function (address) {
+                     if (address) {
+                         geolocation = address.location;
+                         $scope.searchModel.location = address.location;
+                         $scope.searchModel.latitude = address.latitude;
+                         $scope.searchModel.longitude = address.longitude;
+                         $scope.searchModel.canGetLocation = true;
+                     } else {
+                         setLocationToNotFound();
+                     }
+                 }, function (errorMessage) {
+                     setLocationToNotFound();
+                 });
+        });            
     };
 
     setLocationToNotFound = function () {
