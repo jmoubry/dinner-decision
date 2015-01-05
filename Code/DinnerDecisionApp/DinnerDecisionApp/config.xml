@@ -11,18 +11,19 @@
     Moubry Mobile, Inc.
   </author>
   <content src="index.html" />
-  <access origin="https://api.foursquare.com" />
+  <access origin="*" />
   <preference name="SplashScreen" value="screen" />
   <preference name="windows-target-version" value="8.0" />
   <preference name="windows-phone-target-version" value="8.1" />
   <preference name="AndroidLaunchMode" value="singleTop" />
   <preference name="DisallowOverscroll" value="true" />
-  <preference name="StatusBarOverlaysWebView" value="true" />
+  <preference name="StatusBarOverlaysWebView" value="false" />
   <preference name="StatusBarBackgroundColor" value="#eb6864" />
   <preference name="StatusBarStyle" value="lightcontent" />
   <vs:plugin name="org.apache.cordova.device" version="0.2.12" />
   <vs:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
   <vs:plugin name="org.apache.cordova.statusbar" version="0.1.8" />
   <vs:plugin name="com.rjfun.cordova.plugin.admob" version="2.1.4" />
+  <vs:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
   <vs:platformSpecificValues />
 </widget>

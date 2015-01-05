@@ -3,7 +3,6 @@
 // To debug code on page load in Ripple or on Android devices/emulators: launch your app, set breakpoints, 
 // and then run "window.location.reload()" in the JavaScript Console.
 
-window.isUsingRippleEmulator = false;
 window.isTestAd = true;
 
 (function () {
@@ -44,7 +43,7 @@ window.isTestAd = true;
         if (window.plugins && window.plugins.AdMob) {
             var ad_units = {
                 ios: {
-                    banner: 'ca-app-pub-9482841268275923/4475283296',
+                    banner: 'ca-app-pub-9482841268275923/6581127297',
                     interstitial: ''
                 },
                 android: {
@@ -70,7 +69,7 @@ window.isTestAd = true;
                 interstitialAdId: admobid.interstitial,
                 bannerAtTop: false, // set to true, to put banner at top
                 overlap: false, // set to true, to allow banner overlap webview
-                offsetTopBar: false, // set to true to avoid ios7 status bar overlap
+                offsetTopBar: true, // set to true to avoid ios7 status bar overlap
                 isTesting: window.isTestAd, // receiving test ad
                 autoShow: true // auto show interstitial ad when loaded
             });
