@@ -78,13 +78,8 @@
                     $scope.isSubmitting = false;
                     $('#noMatchesModal').modal('show');
                 } else {
-                    var uniqueNames = [];
-
                     $.each(list, function (index, item) {
-                        if ($.inArray(item.venue.name, uniqueNames) === -1) {
-                            modelService.addRestaurant(item.venue.name);
-                            uniqueNames.push(item.venue.name);
-                        }
+                        modelService.addRestaurant(item.venue.name);
                     });
 
                     modelService.setSearchModel($scope.searchModel);
