@@ -10,7 +10,10 @@ window.isTestAd = true;
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
+    FastClick.attach(document.body);
+
     function onDeviceReady() {
+
         // Handle the Cordova events
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);

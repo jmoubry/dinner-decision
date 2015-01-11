@@ -5,11 +5,11 @@
     var guestNumber = parseInt($routeParams.guestNumber);    
     var previousGuestNumber = modelService.getCurrentGuestNumber();
     
-    // Prevent back button from letting guests see earlier guests' votes.
-    if (previousGuestNumber > guestNumber) {
-        $location.path('/guest/' + previousGuestNumber);
-        return;
-    }
+    //// Prevent back button from letting guests see earlier guests' votes.
+    //if (previousGuestNumber > guestNumber) {
+    //    $location.path('/guest/' + previousGuestNumber);
+    //    return;
+    //}
 
     var restaurants = modelService.getRestaurants();
     $scope.restaurant = restaurants[restaurantNumber -1];

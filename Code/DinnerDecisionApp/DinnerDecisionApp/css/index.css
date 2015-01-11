@@ -11,6 +11,13 @@
     background-color: transparent;
 }
 
+.form-control,
+.form-control:focus,
+.btn-toggle.btn.active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
 .back-button {
     width: 40px;
     padding-top: 12px;

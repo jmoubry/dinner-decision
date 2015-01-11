@@ -2,7 +2,7 @@
     <div ng-show="failedValidation" class="alert alert-danger" role="alert"><b>Oops!</b> We suggest adding 5-10 places.</div>
     <form id="restaurant-form" ng-submit="addRestaurant()">
         <div class="input-group input-group-lg">
-            <input class="form-control" id="new-restaurant" placeholder="e.g. Panera Bread" ng-model="newRestaurant" autocapitalize="words" autofocus>
+            <input class="form-control" id="new-restaurant" placeholder="e.g. Panera Bread" ng-model="newRestaurant" autocapitalize="words">
             <span class="input-group-btn">
                 <button class="btn btn-default" type="button" ng-click="addRestaurant()">Add</button>
             </span>

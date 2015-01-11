@@ -278,6 +278,7 @@
     <Content Include="scripts\controllers\resultController.js" />
     <Content Include="scripts\controllers\voteController.js" />
     <Content Include="scripts\data\categories.js" />
+    <Content Include="scripts\fastclick.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\jquery-2.1.1.min.js" />
     <Content Include="scripts\services\foursquareBaseUrlService.js" />
