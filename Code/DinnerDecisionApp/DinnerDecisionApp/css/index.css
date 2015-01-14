@@ -3,7 +3,12 @@
 }
 
 .navbar-header {
-    display: flex;
+    display: table;
+    width: 100%;
+}
+
+.android .navbar-header {
+    display: block;
 }
 
 .navbar-inverse .navbar-brand:focus, 
@@ -19,8 +24,10 @@
 }
 
 .back-button {
+    min-width: 40px;
     width: 40px;
     padding-top: 12px;
+    display: table-cell;
 }
 
 .back-button .glyphicon {
@@ -33,10 +40,12 @@
 
 .dd-logo {
     margin: 0 auto;
+    display: table-cell;
 }
 
 .android .dd-logo {
     margin: 0;
+    width: auto;
 }
 
 .dd-logo img {
@@ -49,7 +58,9 @@
 }
 
 .dd-spacer {
+    min-width: 40px;
     width: 40px;
+    display: table-cell;
 }
 
 .dd-about {
