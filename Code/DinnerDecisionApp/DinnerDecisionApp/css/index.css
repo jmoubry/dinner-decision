@@ -74,14 +74,15 @@
 }
 
 .restaurant-wrapper {
-    min-height: 92px;
+    min-height: 142px;
     padding-bottom: 20px;
     padding-top: 20px;
     display: table;
     width: 100%;
+    text-align: center;
 }
 
-    .restaurant-wrapper h3 {
+    .restaurant-wrapper .restaurant-label {
         display: table-cell;
         vertical-align: middle;
         text-align: center;

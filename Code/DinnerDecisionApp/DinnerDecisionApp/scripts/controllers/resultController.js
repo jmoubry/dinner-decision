@@ -55,7 +55,18 @@
         }
 
         $scope.winningRestaurant = $scope.tiedWinningRestaurants[Math.floor(Math.random() * $scope.tiedWinningRestaurants.length)];
+        $scope.mapUrl = "maps://maps.apple.com/?q=" + $scope.winningRestaurant.formattedAddress;
+        $scope.mapUrlTest = "maps://maps.apple.com/?q=4404 voss hills pl, dallas, tx 75287";
     };
+
+    $scope.openMaps = function () {
+        // TODO: configure for Android.
+        window.location = "maps://maps.apple.com/?q=" + $scope.winningRestaurant.formattedAddressForMaps;
+    }
+
+    $scope.openPhone = function () {
+        window.location = "tel:" + $scope.winningRestaurant.formattedPhone;
+    }
 
     determineWinner();
 });

@@ -13,7 +13,7 @@
             return;
         }
 
-        modelService.addRestaurant(newRestaurant);
+        modelService.addRestaurant({ name: newRestaurant });
 
         $scope.newRestaurant = '';
     };

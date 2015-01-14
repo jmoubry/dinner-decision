@@ -1,26 +1,14 @@
 ﻿<div class="container">
+    <p style="text-align: center;font-size:20px;color:black;text-transform:uppercase">The winner is</p>
     <div class="jumbotron">
-        <h1>The winner is<br/>{{winningRestaurant.name.trim()}}!</h1>
-        <p><a ng-click="restart()" class="btn btn-lg btn-default" role="button">Start Over</a></p>
+        <h1>{{winningRestaurant.name.trim()}}</h1>
+        {{winningRestaurant.formattedAddress}}<br/>
+        <button ng-click="openMaps()" type="button" class="btn btn-primary btn-lg" style="margin-right:20px">
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 2px"></span> Map
+        </button>
+        <button ng-click="openPhone()" type="button" class="btn btn-primary btn-lg">
+            <span class="glyphicon glyphicon-earphone" aria-hidden="true" style="margin-right: 2px"></span> Call
+        </button>
     </div>
-    <div ng-show="tiedWinningRestaurants.length > 1">
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-primary">
-                <div class="panel-heading" data-toggle="collapse" data-target="#collapseTies" style="cursor: pointer">
-                    <h4 class="panel-title">
-                        <strong>It was a tie!</strong> View all the winners...
-                    </h4>
-                </div>
-                <div id="collapseTies" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <ul class="list-unstyled">
-                            <li ng-repeat="restaurant in tiedWinningRestaurants | orderBy:'name'">
-                                <p>{{restaurant.name}}</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <p style="text-align:center;margin-top: 30px"><a ng-click="restart()" class="btn btn-lg btn-default" role="button">Start Over</a></p>    
 </div>

@@ -79,7 +79,21 @@
                     $('#noMatchesModal').modal('show');
                 } else {
                     $.each(list, function (index, item) {
-                        modelService.addRestaurant(item.venue.name);
+                        try {
+                            modelService.addRestaurant({
+                                name: item.venue.name,
+                                categoryName: item.venue.categories[0].name,
+                                url: item.venue.url,
+                                formattedAddress: item.venue.location.formattedAddress.length == 1 ? item.venue.location.formattedAddress[0] : item.venue.location.formattedAddress[0] + ', ' + item.venue.location.formattedAddress[1],
+                                formattedAddressForMaps: item.venue.location.address + ', ' + item.venue.location.city + ', ' + item.venue.location.state + ' ' + item.venue.location.postalCode,
+                                formattedAddressLines: item.venue.location.formattedAddress,                                
+                                formattedPhone: item.venue.contact.formattedPhone,
+                            });
+                        } catch (err) {
+                            modelService.addRestaurant({
+                                name: item.venue.name
+                            });
+                        }
                     });
 
                     modelService.setSearchModel($scope.searchModel);

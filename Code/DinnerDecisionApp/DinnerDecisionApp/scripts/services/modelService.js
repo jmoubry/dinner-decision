@@ -22,7 +22,13 @@
 
     var addRestaurant = function (newRestaurant) {
         model.restaurants.push({
-            name: newRestaurant,
+            name: newRestaurant.name,
+            categoryName: newRestaurant.categoryName,
+            url: newRestaurant.url,
+            formattedAddress: newRestaurant.formattedAddress,
+            formattedAddressForMaps: newRestaurant.formattedAddressForMaps,
+            formattedAddressLines: newRestaurant.formattedAddressLines,
+            formattedPhone: newRestaurant.formattedPhone,
             votes: []
         });
 
