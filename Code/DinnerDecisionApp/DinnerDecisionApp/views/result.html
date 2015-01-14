@@ -3,10 +3,10 @@
     <div class="jumbotron">
         <h1>{{winningRestaurant.name.trim()}}</h1>
         {{winningRestaurant.formattedAddress}}<br/>
-        <button ng-click="openMaps()" type="button" class="btn btn-primary btn-lg" style="margin-right:20px">
+        <button ng-show="winningRestaurant.formattedAddress" ng-click="openMaps()" type="button" class="btn btn-primary btn-lg" style="margin-right:20px">
             <span class="glyphicon glyphicon-map-marker" aria-hidden="true" style="margin-right: 2px"></span> Map
         </button>
-        <button ng-click="openPhone()" type="button" class="btn btn-primary btn-lg">
+        <button ng-show="winningRestaurant.formattedPhone" ng-click="openPhone()" type="button" class="btn btn-primary btn-lg">
             <span class="glyphicon glyphicon-earphone" aria-hidden="true" style="margin-right: 2px"></span> Call
         </button>
     </div>
